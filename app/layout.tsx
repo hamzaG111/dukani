@@ -2,14 +2,35 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "دُكّاني — مساعدك التجاري الذكي",
-  description: "أول نظام تجاري ذكي مصمم للتاجر العربي. حوّل كل محادثة إلى فرصة بيع بقوة الذكاء الاصطناعي.",
-  keywords: "دكاني, chatbot عربي, مساعد تجاري, ذكاء اصطناعي, تجارة إلكترونية",
+  title: {
+    default: "دُكّاني — مساعدك التجاري الذكي بالدارجة",
+    template: "%s | دُكّاني",
+  },
+  description: "أول نظام تجاري ذكي مصمم للتاجر العربي. يرد بالدارجة المغربية ٢٤/٧ ويبيع بدلاً عنك. إعداد في ٥ دقائق، بدون خبرة تقنية.",
+  keywords: ["دكاني", "chatbot عربي", "مساعد تجاري ذكي", "ذكاء اصطناعي مغربي", "تجارة إلكترونية", "واتساب بوت", "دارجة", "chatbot maroc"],
+  authors: [{ name: "دُكّاني" }],
+  creator: "دُكّاني",
+  metadataBase: new URL("https://dukani.ma"),
+  alternates: {
+    canonical: "/",
+    languages: { "ar": "/", "fr": "/fr", "en": "/en" },
+  },
   openGraph: {
     title: "دُكّاني — مساعدك التجاري الذكي",
-    description: "حوّل كل محادثة إلى فرصة بيع",
+    description: "يرد على عملائك بالدارجة ويبيع ٢٤/٧. ٢٠٠٠+ تاجر مغربي يثق بدُكّاني.",
     locale: "ar_MA",
     type: "website",
+    siteName: "دُكّاني",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "دُكّاني — مساعدك التجاري الذكي",
+    description: "يرد على عملائك بالدارجة ويبيع ٢٤/٧",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
 };
 

@@ -193,17 +193,54 @@ export default function DashboardPage() {
           </motion.div>
         </div>
 
+        {/* AI Revenue Forecast */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.48 }}
+          className="glass-gold rounded-3xl border border-gold/25 p-6"
+        >
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center text-xl">🔮</div>
+            <div>
+              <h3 className="text-foreground font-black">توقعات الإيرادات — الشهر القادم</h3>
+              <p className="text-muted text-xs">مبنية على معدل محادثاتك وسلوك عملائك</p>
+            </div>
+            <div className="mr-auto text-left">
+              <p className="text-gold font-black text-2xl">٤٨٠٠ د.م</p>
+              <p className="text-green-400 text-xs font-semibold">↑ +٣٤٪ عن الشهر الماضي</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-4">
+            {[
+              { label: "محادثات متوقعة", value: "٧٢٠", icon: "💬" },
+              { label: "طلبات متوقعة", value: "٢٦٠", icon: "🛒" },
+              { label: "معدل التحويل", value: "٣٦٪", icon: "🎯" },
+            ].map((s, i) => (
+              <div key={i} className="bg-black/20 rounded-2xl p-3 text-center">
+                <div className="text-xl mb-1">{s.icon}</div>
+                <p className="text-gold font-black text-lg">{s.value}</p>
+                <p className="text-muted text-xs">{s.label}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 p-3 bg-green-500/5 border border-green-500/15 rounded-2xl">
+            <p className="text-green-400 text-sm font-semibold">💡 رؤية الذكاء الاصطناعي:</p>
+            <p className="text-muted text-xs mt-1">إذا أضفت خدمة التوصيل المجاني للطلبات فوق ٣٠٠ درهم، يمكنك رفع معدل التحويل إلى ٤٥٪ وتحقيق +١٢٠٠ درهم إضافية شهرياً.</p>
+          </div>
+        </motion.div>
+
         {/* Quick actions */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.55 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {[
             { href: "/dashboard/products", icon: "➕", label: "إضافة منتج" },
             { href: "/dashboard/chat-link", icon: "🔗", label: "مشاركة الرابط" },
-            { href: "/dashboard/settings", icon: "🎨", label: "تخصيص الشات" },
+            { href: "/dashboard/referral", icon: "🤝", label: "برنامج الإحالة" },
             { href: "/pricing", icon: "⚡", label: "ترقية الخطة" },
           ].map((action, i) => (
             <a
