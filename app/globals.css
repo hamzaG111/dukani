@@ -127,6 +127,20 @@ body {
   color: #FFFFFF;
 }
 
+/* Safe area for mobile nav */
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+/* Skeleton pulse override */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 /* Accordion */
 details summary {
   list-style: none;

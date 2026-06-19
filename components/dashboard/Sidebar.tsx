@@ -24,6 +24,16 @@ const nav = [
     ),
   },
   {
+    href: "/dashboard/conversations",
+    label: "المحادثات",
+    badge: 3,
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+    ),
+  },
+  {
     href: "/dashboard/chat-link",
     label: "رابط الشات",
     icon: (
@@ -38,6 +48,15 @@ const nav = [
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    ),
+  },
+  {
+    href: "/dashboard/subscription",
+    label: "الاشتراك",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
       </svg>
     ),
   },
@@ -122,6 +141,11 @@ export default function Sidebar() {
               <span className={`flex-shrink-0 ${active ? "text-gold" : ""}`}>{item.icon}</span>
               {!collapsed && (
                 <span className="text-sm font-semibold whitespace-nowrap">{item.label}</span>
+              )}
+              {!active && !collapsed && (item as { badge?: number }).badge && (
+                <span className="mr-auto text-[10px] font-black bg-gold text-background w-4 h-4 rounded-full flex items-center justify-center">
+                  {(item as { badge?: number }).badge}
+                </span>
               )}
               {active && !collapsed && (
                 <span className="mr-auto w-1.5 h-1.5 rounded-full bg-gold" />
