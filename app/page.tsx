@@ -1,3 +1,4 @@
+import CountdownBanner from "@/components/landing/CountdownBanner";
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
 import LiveTicker from "@/components/landing/LiveTicker";
@@ -22,6 +23,7 @@ import ExitIntentPopup from "@/components/landing/ExitIntentPopup";
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+      <CountdownBanner />
       <Navbar />
       <Hero />
       <LiveTicker />

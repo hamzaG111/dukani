@@ -9,8 +9,14 @@ const links: Record<string, { label: string; href: string }[]> = {
     { label: "الأسعار", href: "/pricing" },
     { label: "كيف يعمل", href: "/#how-it-works" },
     { label: "دليل المتاجر", href: "/stores" },
-    { label: "قصص النجاح", href: "/success-stories" },
+    { label: "تطبيق الجوال", href: "/mobile" },
     { label: "الأسئلة الشائعة", href: "/faq" },
+  ],
+  الموارد: [
+    { label: "المدونة", href: "/blog" },
+    { label: "قصص النجاح", href: "/success-stories" },
+    { label: "مركز المطورين", href: "/api-docs" },
+    { label: "برنامج الولاء", href: "/dashboard/loyalty" },
   ],
   الشركة: [
     { label: "من نحن", href: "/about" },
@@ -62,9 +68,9 @@ export default function Footer() {
   return (
     <footer className="bg-surface border-t border-border pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-10 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 md:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-4">
               <div className="w-9 h-9 rounded-xl bg-gold-gradient flex items-center justify-center shadow-gold">
                 <span className="text-background font-black text-lg">د</span>
