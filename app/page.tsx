@@ -16,6 +16,7 @@ import Pricing from "@/components/landing/Pricing";
 import CTA from "@/components/landing/CTA";
 import Footer from "@/components/landing/Footer";
 import FloatingCTA from "@/components/landing/FloatingCTA";
+import SocialProofToast from "@/components/landing/SocialProofToast";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
       <CTA />
       <Footer />
       <FloatingCTA />
+      <SocialProofToast />
     </main>
   );
 }

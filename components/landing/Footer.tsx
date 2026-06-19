@@ -12,8 +12,8 @@ const links: Record<string, { label: string; href: string }[]> = {
   ],
   الشركة: [
     { label: "من نحن", href: "/about" },
+    { label: "برنامج الشركاء", href: "/partners" },
     { label: "برنامج الإحالة", href: "/dashboard/referral" },
-    { label: "الوظائف", href: "#" },
     { label: "تواصل معنا", href: "#" },
   ],
   القانوني: [
