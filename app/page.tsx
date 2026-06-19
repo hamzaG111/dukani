@@ -17,6 +17,7 @@ import CTA from "@/components/landing/CTA";
 import Footer from "@/components/landing/Footer";
 import FloatingCTA from "@/components/landing/FloatingCTA";
 import SocialProofToast from "@/components/landing/SocialProofToast";
+import ExitIntentPopup from "@/components/landing/ExitIntentPopup";
 
 export default function Home() {
   return (
@@ -40,6 +41,7 @@ export default function Home() {
       <Footer />
       <FloatingCTA />
       <SocialProofToast />
+      <ExitIntentPopup />
     </main>
   );
 }
