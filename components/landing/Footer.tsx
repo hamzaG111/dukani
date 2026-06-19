@@ -3,10 +3,24 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const links = {
-  المنتج: ["المميزات", "الأسعار", "كيف يعمل", "قصص النجاح"],
-  الشركة: ["من نحن", "المدونة", "الوظائف", "تواصل معنا"],
-  القانوني: ["سياسة الخصوصية", "شروط الاستخدام", "ملفات تعريف الارتباط"],
+const links: Record<string, { label: string; href: string }[]> = {
+  المنتج: [
+    { label: "المميزات", href: "/#features" },
+    { label: "الأسعار", href: "/pricing" },
+    { label: "كيف يعمل", href: "/#how-it-works" },
+    { label: "دليل المتاجر", href: "/stores" },
+  ],
+  الشركة: [
+    { label: "من نحن", href: "/about" },
+    { label: "برنامج الإحالة", href: "/dashboard/referral" },
+    { label: "الوظائف", href: "#" },
+    { label: "تواصل معنا", href: "#" },
+  ],
+  القانوني: [
+    { label: "سياسة الخصوصية", href: "#" },
+    { label: "شروط الاستخدام", href: "#" },
+    { label: "ملفات تعريف الارتباط", href: "#" },
+  ],
 };
 
 const socials = [
@@ -89,12 +103,12 @@ export default function Footer() {
               <h4 className="text-foreground font-bold text-sm mb-4">{category}</h4>
               <ul className="space-y-3">
                 {items.map((item) => (
-                  <li key={item}>
+                  <li key={item.label}>
                     <a
-                      href="#"
+                      href={item.href}
                       className="text-muted text-sm hover:text-gold transition-colors duration-200"
                     >
-                      {item}
+                      {item.label}
                     </a>
                   </li>
                 ))}

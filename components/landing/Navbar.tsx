@@ -5,10 +5,11 @@ import { useState } from "react";
 import Button from "@/components/ui/Button";
 
 const navLinks = [
-  { label: "المميزات", href: "#features" },
-  { label: "كيف يعمل", href: "#how-it-works" },
-  { label: "الأسعار", href: "#pricing" },
-  { label: "قصص النجاح", href: "#testimonials" },
+  { label: "المميزات", href: "/#features" },
+  { label: "كيف يعمل", href: "/#how-it-works" },
+  { label: "الأسعار", href: "/pricing" },
+  { label: "المتاجر", href: "/stores" },
+  { label: "من نحن", href: "/about" },
 ];
 
 export default function Navbar() {
@@ -58,9 +59,11 @@ export default function Navbar() {
           <a href="/auth/login" className="text-muted hover:text-foreground text-sm font-medium transition-colors px-4 py-2">
             تسجيل الدخول
           </a>
-          <Button size="sm" variant="primary">
-            ابدأ مجاناً
-          </Button>
+          <a href="/auth/register">
+            <Button size="sm" variant="primary">
+              ابدأ مجاناً
+            </Button>
+          </a>
         </div>
 
         {/* Mobile menu button */}
