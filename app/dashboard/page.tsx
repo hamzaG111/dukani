@@ -235,25 +235,40 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
         >
-          {[
-            { href: "/dashboard/products", icon: "➕", label: "إضافة منتج" },
-            { href: "/dashboard/chat-link", icon: "🔗", label: "مشاركة الرابط" },
-            { href: "/dashboard/referral", icon: "🤝", label: "برنامج الإحالة" },
-            { href: "/pricing", icon: "⚡", label: "ترقية الخطة" },
-          ].map((action, i) => (
-            <a
-              key={i}
-              href={action.href}
-              className="glass rounded-2xl border border-border p-4 flex items-center gap-3 hover:border-gold/30 hover:-translate-y-0.5 transition-all duration-200 group"
-            >
-              <span className="text-xl">{action.icon}</span>
-              <span className="text-foreground text-sm font-semibold group-hover:text-gold transition-colors">
-                {action.label}
-              </span>
-            </a>
-          ))}
+          <h3 className="text-foreground font-black mb-4">وصول سريع</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { href: "/dashboard/orders",        icon: "📦", label: "الطلبيات",        badge: "2" },
+              { href: "/dashboard/broadcast",     icon: "📢", label: "بث جماعي" },
+              { href: "/dashboard/inventory",     icon: "🗃️", label: "المخزون",         badge: "!" },
+              { href: "/dashboard/knowledge",     icon: "🧠", label: "قاعدة المعرفة" },
+              { href: "/dashboard/loyalty",       icon: "❤️", label: "الولاء" },
+              { href: "/dashboard/integrations",  icon: "🔌", label: "التكاملات" },
+              { href: "/dashboard/forecast",      icon: "📈", label: "التوقعات" },
+              { href: "/dashboard/referral",      icon: "🤝", label: "الإحالة" },
+              { href: "/dashboard/products",      icon: "➕", label: "إضافة منتج" },
+              { href: "/dashboard/chat-link",     icon: "🔗", label: "رابط الشات" },
+              { href: "/dashboard/reviews",       icon: "⭐", label: "التقييمات" },
+              { href: "/pricing",                 icon: "⚡", label: "ترقية الخطة" },
+            ].map((action, i) => (
+              <a
+                key={i}
+                href={action.href}
+                className="relative glass rounded-2xl border border-border p-4 flex items-center gap-3 hover:border-gold/30 hover:-translate-y-0.5 transition-all duration-200 group"
+              >
+                {action.badge && (
+                  <span className="absolute top-2 left-2 w-4 h-4 rounded-full bg-gold text-background text-[9px] font-black flex items-center justify-center">
+                    {action.badge}
+                  </span>
+                )}
+                <span className="text-lg">{action.icon}</span>
+                <span className="text-foreground text-xs font-semibold group-hover:text-gold transition-colors">
+                  {action.label}
+                </span>
+              </a>
+            ))}
+          </div>
         </motion.div>
       </main>
     </>

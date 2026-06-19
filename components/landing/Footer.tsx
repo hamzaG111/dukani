@@ -25,9 +25,9 @@ const links: Record<string, { label: string; href: string }[]> = {
     { label: "تواصل معنا", href: "#" },
   ],
   القانوني: [
-    { label: "سياسة الخصوصية", href: "#" },
-    { label: "شروط الاستخدام", href: "#" },
-    { label: "ملفات تعريف الارتباط", href: "#" },
+    { label: "سياسة الخصوصية", href: "/legal/privacy" },
+    { label: "شروط الاستخدام", href: "/legal/terms" },
+    { label: "تواصل معنا", href: "/contact" },
   ],
 };
 
