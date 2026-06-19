@@ -9,6 +9,7 @@ const navLinks = [
   { label: "كيف يعمل", href: "/#how-it-works" },
   { label: "الأسعار", href: "/pricing" },
   { label: "المتاجر", href: "/stores" },
+  { label: "المدونة", href: "/blog" },
   { label: "من نحن", href: "/about" },
 ];
 
