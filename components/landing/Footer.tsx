@@ -9,6 +9,7 @@ const links: Record<string, { label: string; href: string }[]> = {
     { label: "الأسعار", href: "/pricing" },
     { label: "كيف يعمل", href: "/#how-it-works" },
     { label: "دليل المتاجر", href: "/stores" },
+    { label: "قصص النجاح", href: "/success-stories" },
     { label: "الأسئلة الشائعة", href: "/faq" },
   ],
   الشركة: [
