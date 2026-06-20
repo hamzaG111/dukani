@@ -24,6 +24,7 @@ const PUBLIC_PATHS = [
   "/api/whatsapp",
   "/api/chat",
   "/store",
+  "/chat",
   "/manifest.webmanifest",
   "/robots.txt",
   "/sitemap.xml",
