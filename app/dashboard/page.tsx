@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import TopBar from "@/components/dashboard/TopBar";
 import { useGamification } from "@/contexts/GamificationContext";
+import { useProducts } from "@/hooks/useProducts";
 
 const stats = [
   { label: "محادثات اليوم",   value: "24",    change: "+12%",  positive: true,  icon: "💬", sub: "مقارنة بالأمس" },
@@ -72,10 +73,22 @@ function StatCard({ stat, i }: { stat: typeof stats[0]; i: number }) {
 
 export default function DashboardPage() {
   const { streak, xp, xpProgress, xpToNextLevel, levelInfo, unlockAchievement } = useGamification();
+  const { products } = useProducts();
   const [activityIdx, setActivityIdx] = useState(0);
   const [showStreakBanner, setShowStreakBanner] = useState(false);
-  const completedSteps = onboardingSteps.filter(s => s.done).length;
-  const completionPct = Math.round((completedSteps / onboardingSteps.length) * 100);
+
+  // Derive real data from products hook
+  const realTopProducts = [...products]
+    .sort((a, b) => b.requests - a.requests)
+    .slice(0, 4);
+  const maxRequests = Math.max(...(realTopProducts.map(p => p.requests).concat([1])));
+  const hasProducts = products.length > 0;
+
+  const dynamicOnboardingSteps = onboardingSteps.map(s =>
+    s.id === 1 ? { ...s, done: hasProducts } : s
+  );
+  const completedSteps = dynamicOnboardingSteps.filter(s => s.done).length;
+  const completionPct = Math.round((completedSteps / dynamicOnboardingSteps.length) * 100);
 
   useEffect(() => {
     const t = setInterval(() => setActivityIdx(i => (i + 1) % liveActivity.length), 4000);
@@ -185,7 +198,7 @@ export default function DashboardPage() {
             />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-5 gap-2">
-            {onboardingSteps.map((step) => (
+            {dynamicOnboardingSteps.map((step) => (
               <a
                 key={step.id}
                 href={step.href}
@@ -250,7 +263,7 @@ export default function DashboardPage() {
               <span className="text-muted text-xs">اليوم</span>
             </div>
             <div className="space-y-4">
-              {topProducts.map((p, i) => (
+              {(realTopProducts.length > 0 ? realTopProducts : topProducts).map((p, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <span className="text-xl w-8 text-center">{p.icon}</span>
                   <div className="flex-1 min-w-0">
@@ -258,7 +271,7 @@ export default function DashboardPage() {
                     <div className="mt-1 h-1.5 bg-surface-2 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
-                        animate={{ width: `${(p.requests / 18) * 100}%` }}
+                        animate={{ width: `${(p.requests / maxRequests) * 100}%` }}
                         transition={{ delay: 0.5 + i * 0.1, duration: 0.8 }}
                         className="h-full bg-gold-gradient-h rounded-full"
                       />
