@@ -73,7 +73,7 @@ export default function Problem() {
           <p className="text-2xl font-black text-foreground">
             <span className="text-gold-gradient">دُكّاني</span> هو الحل الذي كنت تبحث عنه
           </p>
-          <p className="text-muted mt-2">مساعد ذكي يعمل ٢٤/٧ — يرد، يقترح، يبيع نيابةً عنك</p>
+          <p className="text-muted mt-2">مساعد ذكي يعمل 24/7 — يرد، يقترح، يبيع نيابةً عنك</p>
         </motion.div>
       </div>
     </section>

@@ -13,7 +13,7 @@ const tiers = [
     textColor: "text-amber-500",
     minPoints: 0,
     maxPoints: 499,
-    perks: ["خصم ٥٪ دائم", "أولوية الدعم الفني", "وصول للمقالات المميزة"],
+    perks: ["خصم 5٪ دائم", "أولوية الدعم الفني", "وصول للمقالات المميزة"],
     customers: 142,
   },
   {
@@ -24,7 +24,7 @@ const tiers = [
     textColor: "text-slate-400",
     minPoints: 500,
     maxPoints: 1499,
-    perks: ["خصم ١٠٪ دائم", "شحن مجاني", "هدايا عيد الميلاد", "وصول مبكر للمنتجات"],
+    perks: ["خصم 10٪ دائم", "شحن مجاني", "هدايا عيد الميلاد", "وصول مبكر للمنتجات"],
     customers: 68,
   },
   {
@@ -35,7 +35,7 @@ const tiers = [
     textColor: "text-gold",
     minPoints: 1500,
     maxPoints: 4999,
-    perks: ["خصم ١٥٪ دائم", "شحن سريع مجاني", "هدايا موسمية", "مدير حساب خاص", "دعوة لفعاليات VIP"],
+    perks: ["خصم 15٪ دائم", "شحن سريع مجاني", "هدايا موسمية", "مدير حساب خاص", "دعوة لفعاليات VIP"],
     customers: 23,
   },
   {
@@ -46,24 +46,24 @@ const tiers = [
     textColor: "text-purple-400",
     minPoints: 5000,
     maxPoints: Infinity,
-    perks: ["خصم ٢٠٪ دائم", "كل ما في الذهبي +", "منتجات حصرية", "بطاقة ولاء مادية", "تجربة تسوق VIP شخصية"],
+    perks: ["خصم 20٪ دائم", "كل ما في الذهبي +", "منتجات حصرية", "بطاقة ولاء مادية", "تجربة تسوق VIP شخصية"],
     customers: 7,
   },
 ];
 
 const topCustomers = [
-  { name: "فاطمة الزهراء", points: 7240, tier: "بلاتيني", spent: "٤٥,٢٠٠", lastPurchase: "أمس" },
-  { name: "كريم بنعلي", points: 5890, tier: "بلاتيني", spent: "٣٨,٩٠٠", lastPurchase: "منذ ٣ أيام" },
-  { name: "سناء المنصوري", points: 4320, tier: "ذهبي", spent: "٢٩,٤٠٠", lastPurchase: "منذ أسبوع" },
-  { name: "يوسف الأمين", points: 3190, tier: "ذهبي", spent: "٢١,٥٠٠", lastPurchase: "البارحة" },
-  { name: "هند الرحالي", points: 1760, tier: "ذهبي", spent: "١٢,٨٠٠", lastPurchase: "اليوم" },
+  { name: "فاطمة الزهراء", points: 7240, tier: "بلاتيني", spent: "45,200", lastPurchase: "أمس" },
+  { name: "كريم بنعلي", points: 5890, tier: "بلاتيني", spent: "38,900", lastPurchase: "منذ 3 أيام" },
+  { name: "سناء المنصوري", points: 4320, tier: "ذهبي", spent: "29,400", lastPurchase: "منذ أسبوع" },
+  { name: "يوسف الأمين", points: 3190, tier: "ذهبي", spent: "21,500", lastPurchase: "البارحة" },
+  { name: "هند الرحالي", points: 1760, tier: "ذهبي", spent: "12,800", lastPurchase: "اليوم" },
 ];
 
 const recentActivity = [
-  { customer: "فاطمة الزهراء", action: "ربحت ١٢٠ نقطة", sub: "بعد شراء عطر الورد", time: "منذ ٥ دقائق", icon: "⬆️" },
-  { customer: "كريم بنعلي", action: "استبدل ٥٠٠ نقطة", sub: "بخصم ٥٠ درهم", time: "منذ ٢٠ دقيقة", icon: "🎁" },
-  { customer: "سناء المنصوري", action: "ترقّت للمستوى الذهبي", sub: "مبروك! مكافأة ٢٠٠ نقطة", time: "منذ ساعة", icon: "🥇" },
-  { customer: "أحمد رضا", action: "انضم لبرنامج الولاء", sub: "مرحباً بعضو جديد!", time: "منذ ٣ ساعات", icon: "👋" },
+  { customer: "فاطمة الزهراء", action: "ربحت 120 نقطة", sub: "بعد شراء عطر الورد", time: "منذ 5 دقائق", icon: "⬆️" },
+  { customer: "كريم بنعلي", action: "استبدل 500 نقطة", sub: "بخصم 50 درهم", time: "منذ 20 دقيقة", icon: "🎁" },
+  { customer: "سناء المنصوري", action: "ترقّت للمستوى الذهبي", sub: "مبروك! مكافأة 200 نقطة", time: "منذ ساعة", icon: "🥇" },
+  { customer: "أحمد رضا", action: "انضم لبرنامج الولاء", sub: "مرحباً بعضو جديد!", time: "منذ 3 ساعات", icon: "👋" },
 ];
 
 export default function LoyaltyPage() {
@@ -81,10 +81,10 @@ export default function LoyaltyPage() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "أعضاء الولاء", value: totalMembers, icon: "👥", sub: "+١٢ هذا الأسبوع" },
-            { label: "نقاط موزّعة", value: "٢٤,٨٠٠", icon: "⭐", sub: "هذا الشهر" },
-            { label: "مكافآت مُستبدلة", value: "٨٩", icon: "🎁", sub: "قيمة: ٣,٢٠٠ د.م" },
-            { label: "الإيرادات المحققة", value: "٦٨,٤٠٠ د.م", icon: "💰", sub: "من الأعضاء" },
+            { label: "أعضاء الولاء", value: totalMembers, icon: "👥", sub: "+12 هذا الأسبوع" },
+            { label: "نقاط موزّعة", value: "24,800", icon: "⭐", sub: "هذا الشهر" },
+            { label: "مكافآت مُستبدلة", value: "89", icon: "🎁", sub: "قيمة: 3,200 د.م" },
+            { label: "الإيرادات المحققة", value: "68,400 د.م", icon: "💰", sub: "من الأعضاء" },
           ].map((s, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 }}
               className="glass rounded-2xl border border-border p-4">
@@ -213,7 +213,7 @@ export default function LoyaltyPage() {
               <p className="text-muted text-sm">حدد كيفية احتساب النقاط لكل درهم ينفقه زبائنك</p>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-muted text-sm">١ نقطة = ١ درهم</span>
+              <span className="text-muted text-sm">1 نقطة = 1 درهم</span>
               <button className="text-xs font-bold bg-gold/10 text-gold border border-gold/20 px-3 py-1.5 rounded-xl hover:bg-gold/20 transition-all">
                 تعديل
               </button>
@@ -233,7 +233,7 @@ export default function LoyaltyPage() {
               className="bg-[#141414] border border-border rounded-3xl p-8 w-full max-w-md">
               <h3 className="text-foreground font-black text-xl mb-6">مكافأة جديدة</h3>
               <div className="space-y-4">
-                <input placeholder="اسم المكافأة (مثال: خصم ٣٠ درهم)" className="w-full bg-surface border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted text-sm focus:outline-none focus:border-gold/40" />
+                <input placeholder="اسم المكافأة (مثال: خصم 30 درهم)" className="w-full bg-surface border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted text-sm focus:outline-none focus:border-gold/40" />
                 <input type="number" placeholder="النقاط المطلوبة" className="w-full bg-surface border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted text-sm focus:outline-none focus:border-gold/40" />
                 <select className="w-full bg-surface border border-border rounded-xl px-4 py-3 text-foreground text-sm focus:outline-none focus:border-gold/40">
                   <option>خصم على الشراء</option>

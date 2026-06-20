@@ -32,7 +32,7 @@ export default function FloatingCTA() {
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-foreground font-black text-sm whitespace-nowrap">ابدأ مجاناً اليوم</p>
-            <p className="text-muted text-xs whitespace-nowrap">لا يلزم بطاقة · إعداد في ٥ دقائق</p>
+            <p className="text-muted text-xs whitespace-nowrap">لا يلزم بطاقة · إعداد في 5 دقائق</p>
           </div>
           <a
             href="/auth/register"

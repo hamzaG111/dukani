@@ -4,13 +4,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const channels = [
-  { icon: "💬", label: "واتساب",    value: "+212 6XX-XXXXXX", sub: "رد فوري — متاح ٢٤/٧", href: "#" },
-  { icon: "📧", label: "البريد",    value: "support@dukani.ma", sub: "رد خلال ٢ ساعة", href: "mailto:support@dukani.ma" },
+  { icon: "💬", label: "واتساب",    value: "+212 6XX-XXXXXX", sub: "رد فوري — متاح 24/7", href: "#" },
+  { icon: "📧", label: "البريد",    value: "support@dukani.ma", sub: "رد خلال 2 ساعة", href: "mailto:support@dukani.ma" },
   { icon: "📸", label: "انستغرام", value: "@dukani.ma",         sub: "رسائل مباشرة", href: "#" },
 ];
 
 const faqs = [
-  { q: "كم يستغرق الإعداد؟",                 a: "٥ دقائق فقط! أكمل التسجيل، أضف منتجاتك، وشارك رابط شاتك." },
+  { q: "كم يستغرق الإعداد؟",                 a: "5 دقائق فقط! أكمل التسجيل، أضف منتجاتك، وشارك رابط شاتك." },
   { q: "هل يعمل بالدارجة المغربية؟",          a: "نعم! المساعد الذكي يتحدث بالدارجة والعربية والفرنسية بطلاقة." },
   { q: "ماذا يحدث إذا نفدت محادثاتي؟",       a: "يتوقف الرد التلقائي فقط، يمكنك الترقية في أي وقت." },
   { q: "هل بياناتي وبيانات زبائني محمية؟",    a: "نعم. نستخدم تشفير SSL وخوادم مؤمّنة. لا نشارك بياناتك أبداً." },

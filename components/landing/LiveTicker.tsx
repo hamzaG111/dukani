@@ -5,13 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const events = [
   { icon: "🎉", text: "تاجر جديد من الدار البيضاء انضم للتو", color: "text-green-400" },
-  { icon: "💰", text: "بيع ناجح في مراكش — ٣٥٠ درهم", color: "text-gold" },
-  { icon: "💬", text: "٨ محادثات جديدة في فاس خلال آخر ساعة", color: "text-blue-400" },
-  { icon: "⭐", text: "تقييم ٥ نجوم من عميل راضٍ في طنجة", color: "text-yellow-400" },
-  { icon: "🚀", text: "متجر الأطلس رفع مبيعاته ٦٧٪ هذا الشهر", color: "text-gold" },
-  { icon: "🎉", text: "تاجر من الرباط أتم إعداده في ٣ دقائق فقط", color: "text-green-400" },
+  { icon: "💰", text: "بيع ناجح في مراكش — 350 درهم", color: "text-gold" },
+  { icon: "💬", text: "8 محادثات جديدة في فاس خلال آخر ساعة", color: "text-blue-400" },
+  { icon: "⭐", text: "تقييم 5 نجوم من عميل راضٍ في طنجة", color: "text-yellow-400" },
+  { icon: "🚀", text: "متجر الأطلس رفع مبيعاته 67٪ هذا الشهر", color: "text-gold" },
+  { icon: "🎉", text: "تاجر من الرباط أتم إعداده في 3 دقائق فقط", color: "text-green-400" },
   { icon: "💰", text: "طلب جديد في أكادير — جبادور بني داكن", color: "text-gold" },
-  { icon: "📱", text: "٢٣ محادثة نشطة الآن على المنصة", color: "text-purple-400" },
+  { icon: "📱", text: "23 محادثة نشطة الآن على المنصة", color: "text-purple-400" },
   { icon: "🔥", text: "خطة احترافية جديدة في وجدة", color: "text-red-400" },
   { icon: "💬", text: "عميل جديد من انستغرام في سلا", color: "text-blue-400" },
 ];

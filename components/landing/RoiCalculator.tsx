@@ -40,7 +40,7 @@ export default function RoiCalculator() {
   const steps = [
     {
       question: "كم عميل يتواصل معك يومياً عبر واتساب وانستغرام؟",
-      sub: "المتوسط للتاجر المغربي: ١٥-٣٠ عميل/يوم",
+      sub: "المتوسط للتاجر المغربي: 15-30 عميل/يوم",
       component: (
         <div className="space-y-4">
           <div className="text-5xl font-black text-gold-gradient text-center">{dailyCustomers}</div>
@@ -49,13 +49,13 @@ export default function RoiCalculator() {
             className="w-full h-2 rounded-full appearance-none cursor-pointer"
             style={{ background: `linear-gradient(to left, #C9A84C ${(dailyCustomers/200)*100}%, #2A2A2A ${(dailyCustomers/200)*100}%)` }}
           />
-          <div className="flex justify-between text-muted text-xs"><span>٥</span><span>٢٠٠+</span></div>
+          <div className="flex justify-between text-muted text-xs"><span>5</span><span>200+</span></div>
         </div>
       ),
     },
     {
       question: "كم نسبة الردود في الوقت المناسب؟ (خلال ساعة)",
-      sub: "العميل الذي لا يُرد عليه فوراً يذهب للمنافس في ٧٣٪ من الحالات",
+      sub: "العميل الذي لا يُرد عليه فوراً يذهب للمنافس في 73٪ من الحالات",
       component: (
         <div className="space-y-4">
           <div className="text-5xl font-black text-gold-gradient text-center">{responseRate}٪</div>
@@ -64,7 +64,7 @@ export default function RoiCalculator() {
             className="w-full h-2 rounded-full appearance-none cursor-pointer"
             style={{ background: `linear-gradient(to left, #C9A84C ${responseRate}%, #2A2A2A ${responseRate}%)` }}
           />
-          <div className="flex justify-between text-muted text-xs"><span>١٠٪</span><span>١٠٠٪</span></div>
+          <div className="flex justify-between text-muted text-xs"><span>10٪</span><span>100٪</span></div>
         </div>
       ),
     },
@@ -82,7 +82,7 @@ export default function RoiCalculator() {
             className="w-full h-2 rounded-full appearance-none cursor-pointer"
             style={{ background: `linear-gradient(to left, #C9A84C ${(avgOrder/2000)*100}%, #2A2A2A ${(avgOrder/2000)*100}%)` }}
           />
-          <div className="flex justify-between text-muted text-xs"><span>٥٠ د.م</span><span>٢٠٠٠+ د.م</span></div>
+          <div className="flex justify-between text-muted text-xs"><span>50 د.م</span><span>2000+ د.م</span></div>
         </div>
       ),
     },
@@ -104,7 +104,7 @@ export default function RoiCalculator() {
             <br /><span className="text-gold-gradient">بدون دُكّاني؟</span>
           </h2>
           <p className="text-muted text-lg max-w-xl mx-auto">
-            حساب دقيق مبني على بيانات ٢٠٠٠+ تاجر عربي
+            حساب دقيق مبني على بيانات 2000+ تاجر عربي
           </p>
         </motion.div>
 
@@ -154,7 +154,7 @@ export default function RoiCalculator() {
                     <AnimatedNumber value={lostMonthly} suffix=" د.م" />
                   </div>
                   <p className="text-muted/60 text-xs">
-                    {missedDaily} عميل/يوم × {avgOrder} درهم × ٣٠ يوم
+                    {missedDaily} عميل/يوم × {avgOrder} درهم × 30 يوم
                   </p>
                 </div>
 

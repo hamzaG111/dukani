@@ -222,7 +222,7 @@ export default function OnboardingPage() {
                             </svg>
                           </div>
                           <p className="text-muted text-sm">اضغط لرفع الشعار</p>
-                          <p className="text-muted/50 text-xs mt-1">PNG, JPG — بحد أقصى ٥ ميغا</p>
+                          <p className="text-muted/50 text-xs mt-1">PNG, JPG — بحد أقصى 5 ميغا</p>
                         </>
                       )}
                     </div>

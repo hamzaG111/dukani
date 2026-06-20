@@ -62,7 +62,7 @@ function generateBotReply(userMsg: string): Omit<Message, "id"> {
   if (msg.includes("توصيل") || msg.includes("livraison") || msg.includes("delivery")) {
     return {
       from: "bot", time: getTime(),
-      text: "نعم! عندنا توصيل لجميع المدن المغربية 🚚\n\n• الدار البيضاء والرباط: ٢٤ ساعة — مجاناً على طلبات فوق ٢٠٠ درهم\n• باقي المدن: ٢٤-٤٨ ساعة — ٢٥ درهم\n\nتحب تطلب؟",
+      text: "نعم! عندنا توصيل لجميع المدن المغربية 🚚\n\n• الدار البيضاء والرباط: 24 ساعة — مجاناً على طلبات فوق 200 درهم\n• باقي المدن: 24-48 ساعة — 25 درهم\n\nتحب تطلب؟",
     };
   }
   if (msg.includes("طلب") || msg.includes("شري") || msg.includes("commander") || msg.includes("أريده")) {
@@ -74,7 +74,7 @@ function generateBotReply(userMsg: string): Omit<Message, "id"> {
   if (msg.includes("خصم") || msg.includes("promo") || msg.includes("solde")) {
     return {
       from: "bot", time: getTime(),
-      text: "يس! 🔥 عندنا الآن خصم ١٥٪ على الجبادور الجلدي البني الداكن — من ٣٥٠ إلى ٢٩٧ درهم فقط!\n\nالعرض محدود، تحب نحجز لك واحد؟",
+      text: "يس! 🔥 عندنا الآن خصم 15٪ على الجبادور الجلدي البني الداكن — من 350 إلى 297 درهم فقط!\n\nالعرض محدود، تحب نحجز لك واحد؟",
     };
   }
   if (msg.includes("مرحبا") || msg.includes("سلام") || msg.includes("ازيك") || msg.includes("كيداير")) {

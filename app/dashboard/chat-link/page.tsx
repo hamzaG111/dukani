@@ -174,9 +174,9 @@ export default function ChatLinkPage() {
           className="grid grid-cols-3 gap-4"
         >
           {[
-            { label: "زيارات الرابط", value: "٣٨٦", icon: "👀" },
-            { label: "بدأوا محادثة", value: "١٤٢", icon: "💬" },
-            { label: "نسبة التحويل", value: "٣٦.٨٪", icon: "🎯" },
+            { label: "زيارات الرابط", value: "386", icon: "👀" },
+            { label: "بدأوا محادثة", value: "142", icon: "💬" },
+            { label: "نسبة التحويل", value: "36.8٪", icon: "🎯" },
           ].map((s, i) => (
             <div key={i} className="glass rounded-2xl border border-border p-4 text-center">
               <div className="text-2xl mb-2">{s.icon}</div>

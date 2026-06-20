@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useGamification } from "@/contexts/GamificationContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const nav = [
   {
@@ -212,6 +214,8 @@ const nav = [
 export default function Sidebar() {
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
+  const { streak, xp, xpProgress, levelInfo } = useGamification();
+  const { lang } = useLanguage();
 
   return (
     <motion.aside
@@ -243,20 +247,50 @@ export default function Sidebar() {
         </button>
       </div>
 
-      {/* Store info */}
+      {/* Store info + Streak */}
       {!collapsed && (
         <div className="px-4 py-3 border-b border-border">
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2.5 mb-2.5">
             <div className="w-8 h-8 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-sm">
               🏪
             </div>
-            <div>
+            <div className="flex-1 min-w-0">
               <p className="text-foreground text-xs font-bold">متجر الأطلس</p>
               <div className="flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
                 <span className="text-green-400 text-xs">نشط</span>
               </div>
             </div>
+            {/* Streak badge */}
+            <div className="flex items-center gap-1 bg-orange-500/10 border border-orange-500/20 rounded-lg px-2 py-1">
+              <span className="text-sm">🔥</span>
+              <span className="text-orange-400 text-xs font-black">{streak}</span>
+            </div>
+          </div>
+          {/* XP Bar */}
+          <div>
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-muted text-[10px]" style={{ color: levelInfo.color }}>{levelInfo.name}</span>
+              <span className="text-muted text-[10px]">{xp} XP</span>
+            </div>
+            <div className="h-1 bg-surface rounded-full overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: `${xpProgress}%` }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="h-full rounded-full"
+                style={{ background: `linear-gradient(90deg, ${levelInfo.color}80, ${levelInfo.color})` }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Collapsed: show streak only */}
+      {collapsed && (
+        <div className="flex justify-center py-2 border-b border-border">
+          <div className="flex flex-col items-center gap-0.5">
+            <span className="text-sm">🔥</span>
+            <span className="text-orange-400 text-[10px] font-black">{streak}</span>
           </div>
         </div>
       )}
@@ -297,7 +331,7 @@ export default function Sidebar() {
         <div className="p-3 border-t border-border">
           <div className="glass-gold rounded-2xl p-3 border border-gold/20">
             <p className="text-xs font-bold text-gold mb-1">الخطة المجانية</p>
-            <p className="text-xs text-muted mb-2">٧٣ محادثة متبقية</p>
+            <p className="text-xs text-muted mb-2">73 محادثة متبقية</p>
             <div className="h-1 bg-surface rounded-full overflow-hidden mb-2">
               <div className="h-full w-[27%] bg-gold-gradient-h rounded-full" />
             </div>

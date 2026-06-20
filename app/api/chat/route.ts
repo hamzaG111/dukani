@@ -103,7 +103,7 @@ function generateFallbackReply(
   }
 
   if (m.includes("توصيل") || m.includes("livraison")) {
-    return `نعم! نوصّل لجميع مدن المغرب 🚚\n• الدار البيضاء والرباط: ٢٤ ساعة\n• باقي المدن: ٢٤-٤٨ ساعة\n\nهل تريد طلب منتج؟`;
+    return `نعم! نوصّل لجميع مدن المغرب 🚚\n• الدار البيضاء والرباط: 24 ساعة\n• باقي المدن: 24-48 ساعة\n\nهل تريد طلب منتج؟`;
   }
 
   if (m.includes("مرحب") || m.includes("سلام") || m.includes("bonjour") || m.includes("hello")) {

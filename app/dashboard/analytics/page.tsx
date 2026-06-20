@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import TopBar from "@/components/dashboard/TopBar";
 
-const periods = ["اليوم", "٧ أيام", "٣٠ يوماً", "٩٠ يوماً"];
+const periods = ["اليوم", "7 أيام", "30 يوماً", "90 يوماً"];
 
 const weeklyData = [
   { day: "الأحد", chats: 28, sales: 8, revenue: 2800 },
@@ -32,16 +32,16 @@ const channelStats = [
 ];
 
 const aiInsights = [
-  { icon: "📈", text: "أفضل وقت للرد هو بين ٧ص و١٠ص — معدل تحويل ٤٢٪ مقابل ٢١٪ في الأوقات الأخرى" },
-  { icon: "🎯", text: "زبائن الدار البيضاء ينفقون ٣٥٪ أكثر من المتوسط — استهدفهم بحملة مخصصة" },
-  { icon: "🔥", text: "منتج الحقيبة اليدوية يرتفع بنسبة ٤١٪ — فكر في رفع السعر أو إضافة نموذج فاخر" },
-  { icon: "⚠️", text: "٨ زبائن لم يرتدوا منذ ٣٠+ يوم — أرسل حملة إعادة تفاعل قبل أن تفقدهم" },
+  { icon: "📈", text: "أفضل وقت للرد هو بين 7ص و10ص — معدل تحويل 42٪ مقابل 21٪ في الأوقات الأخرى" },
+  { icon: "🎯", text: "زبائن الدار البيضاء ينفقون 35٪ أكثر من المتوسط — استهدفهم بحملة مخصصة" },
+  { icon: "🔥", text: "منتج الحقيبة اليدوية يرتفع بنسبة 41٪ — فكر في رفع السعر أو إضافة نموذج فاخر" },
+  { icon: "⚠️", text: "8 زبائن لم يرتدوا منذ 30+ يوم — أرسل حملة إعادة تفاعل قبل أن تفقدهم" },
 ];
 
 const maxRevenue = Math.max(...weeklyData.map(d => d.revenue));
 
 export default function AnalyticsPage() {
-  const [period, setPeriod] = useState("٧ أيام");
+  const [period, setPeriod] = useState("7 أيام");
   const [hoveredBar, setHoveredBar] = useState<number | null>(null);
 
   return (
@@ -68,10 +68,10 @@ export default function AnalyticsPage() {
         {/* KPIs */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "إجمالي المحادثات", value: "٣١٢", change: "+٢٨٪", up: true, icon: "💬" },
-            { label: "مبيعات مغلقة", value: "٨٩", change: "+١٦٪", up: true, icon: "✅" },
-            { label: "الإيرادات", value: "٤٦,١٥٠ د.م", change: "+٣٤٪", up: true, icon: "💰" },
-            { label: "معدل التحويل", value: "٢٨.٥٪", change: "-٢٪", up: false, icon: "📊" },
+            { label: "إجمالي المحادثات", value: "312", change: "+28٪", up: true, icon: "💬" },
+            { label: "مبيعات مغلقة", value: "89", change: "+16٪", up: true, icon: "✅" },
+            { label: "الإيرادات", value: "46,150 د.م", change: "+34٪", up: true, icon: "💰" },
+            { label: "معدل التحويل", value: "28.5٪", change: "-2٪", up: false, icon: "📊" },
           ].map((k, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 }}
               className="glass rounded-2xl border border-border p-4">
@@ -93,7 +93,7 @@ export default function AnalyticsPage() {
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h3 className="text-foreground font-black">الإيرادات اليومية</h3>
-                <p className="text-muted text-xs">آخر ٧ أيام</p>
+                <p className="text-muted text-xs">آخر 7 أيام</p>
               </div>
               <div className="flex items-center gap-4 text-xs text-muted">
                 <span className="flex items-center gap-1"><span className="w-3 h-1 bg-gold rounded-full inline-block" /> إيرادات</span>

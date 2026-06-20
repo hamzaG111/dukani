@@ -14,43 +14,43 @@ const scenarios = [
     id: "conservative",
     label: "متحفظ",
     icon: "🛡️",
-    yearEnd: "٢٨٠,٠٠٠",
-    growth: "+٢٨٪",
+    yearEnd: "280,000",
+    growth: "+28٪",
     color: "text-blue-400",
     bg: "from-blue-500/10 to-surface-2",
     border: "border-blue-500/20",
-    assumptions: ["نمو ثابت ١٠٪/شهر", "الحفاظ على قاعدة الزبائن الحالية", "بدون حملات تسويقية جديدة"],
+    assumptions: ["نمو ثابت 10٪/شهر", "الحفاظ على قاعدة الزبائن الحالية", "بدون حملات تسويقية جديدة"],
   },
   {
     id: "base",
     label: "الأساسي",
     icon: "⭐",
-    yearEnd: "٣٩٥,٠٠٠",
-    growth: "+٤٢٪",
+    yearEnd: "395,000",
+    growth: "+42٪",
     color: "text-gold",
     bg: "from-gold/15 to-surface-2",
     border: "border-gold/30",
-    assumptions: ["نمو ٢٠٪/شهر مع دُكّاني", "حملتان ترويجيتان/شهر", "إضافة ٥ منتجات جديدة"],
+    assumptions: ["نمو 20٪/شهر مع دُكّاني", "حملتان ترويجيتان/شهر", "إضافة 5 منتجات جديدة"],
     recommended: true,
   },
   {
     id: "optimistic",
     label: "متفائل",
     icon: "🚀",
-    yearEnd: "٥٨٠,٠٠٠",
-    growth: "+٦٥٪",
+    yearEnd: "580,000",
+    growth: "+65٪",
     color: "text-green-400",
     bg: "from-green-500/10 to-surface-2",
     border: "border-green-500/20",
-    assumptions: ["نمو ٣٠٪/شهر", "توسع لمتاجر متعددة", "برنامج الإحالة النشط"],
+    assumptions: ["نمو 30٪/شهر", "توسع لمتاجر متعددة", "برنامج الإحالة النشط"],
   },
 ];
 
 const aiTips = [
-  { icon: "📅", title: "موسم رمضان", text: "يونيوز-يوليوز ٢٠٢٦ — متوقع ارتفاع ٦٠٪ في المبيعات. ابدأ حملاتك الآن!", urgent: true },
-  { icon: "🎯", title: "فرصة: منتجات الشتاء", text: "أكتوبر-نونبر: الطلب على الملابس الشتوية يرتفع ٨٥٪. اضف جاكيت جديد قبل شتنبر." },
-  { icon: "💡", title: "زيادة السعر بأمان", text: "بيانات السوق تشير أن زبائنك يقبلون زيادة ١٠-١٥٪ على منتجاتك المميزة." },
-  { icon: "🔄", title: "تحسين معدل التحويل", text: "إضافة صور إضافية للمنتجات يرفع التحويل ٣٣٪ — أضف ٣ صور لكل منتج." },
+  { icon: "📅", title: "موسم رمضان", text: "يونيوز-يوليوز 2026 — متوقع ارتفاع 60٪ في المبيعات. ابدأ حملاتك الآن!", urgent: true },
+  { icon: "🎯", title: "فرصة: منتجات الشتاء", text: "أكتوبر-نونبر: الطلب على الملابس الشتوية يرتفع 85٪. اضف جاكيت جديد قبل شتنبر." },
+  { icon: "💡", title: "زيادة السعر بأمان", text: "بيانات السوق تشير أن زبائنك يقبلون زيادة 10-15٪ على منتجاتك المميزة." },
+  { icon: "🔄", title: "تحسين معدل التحويل", text: "إضافة صور إضافية للمنتجات يرفع التحويل 33٪ — أضف 3 صور لكل منتج." },
 ];
 
 const maxVal = Math.max(...[...actual, ...forecast].filter(Boolean) as number[]);
@@ -76,7 +76,7 @@ export default function ForecastPage() {
               <div className="text-2xl mb-2">{s.icon}</div>
               <p className={`font-black text-sm ${s.color}`}>{s.label}</p>
               <p className="text-foreground font-black text-xl mt-1">{s.yearEnd} د.م</p>
-              <p className="text-muted text-xs">نهاية ٢٠٢٦ • {s.growth}</p>
+              <p className="text-muted text-xs">نهاية 2026 • {s.growth}</p>
               {scenario === s.id && <span className="absolute top-3 left-3 text-gold text-xs">✓</span>}
             </motion.button>
           ))}
@@ -86,7 +86,7 @@ export default function ForecastPage() {
         <div className="glass rounded-2xl border border-border p-6">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h3 className="text-foreground font-black">منحنى الإيرادات ٢٠٢٦</h3>
+              <h3 className="text-foreground font-black">منحنى الإيرادات 2026</h3>
               <p className="text-muted text-xs">الفعلي vs التوقع</p>
             </div>
             <div className="flex gap-4 text-xs text-muted">
@@ -132,7 +132,7 @@ export default function ForecastPage() {
 
           <div className="mt-4 flex items-center gap-2 p-3 rounded-xl bg-surface-2 border border-border">
             <span className="text-xl">📍</span>
-            <p className="text-muted text-xs">الآن: يونيوز ٢٠٢٦ • الخط المتقطع = توقع الذكاء الاصطناعي</p>
+            <p className="text-muted text-xs">الآن: يونيوز 2026 • الخط المتقطع = توقع الذكاء الاصطناعي</p>
           </div>
         </div>
 

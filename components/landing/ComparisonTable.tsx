@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const features = [
   { label: "يتكلم الدارجة المغربية", dukani: true, intercom: false, tidio: false, whatsapp: false },
-  { label: "إعداد في أقل من ٥ دقائق", dukani: true, intercom: false, tidio: false, whatsapp: true },
+  { label: "إعداد في أقل من 5 دقائق", dukani: true, intercom: false, tidio: false, whatsapp: true },
   { label: "ذكاء اصطناعي يبيع بدلاً عنك", dukani: true, intercom: "جزئياً", tidio: "جزئياً", whatsapp: false },
   { label: "عرض بطاقات منتجات في الشات", dukani: true, intercom: false, tidio: false, whatsapp: false },
   { label: "تحليلات ذكية للمبيعات", dukani: true, intercom: true, tidio: "جزئياً", whatsapp: false },
@@ -109,7 +109,7 @@ export default function ComparisonTable() {
               className={`glass rounded-2xl border p-4 text-center ${s.bg}`}
             >
               <p className="text-muted text-xs mb-2">{s.name}</p>
-              <p className={`text-3xl font-black ${s.color}`}>{s.score}/١٠</p>
+              <p className={`text-3xl font-black ${s.color}`}>{s.score}/10</p>
               <div className="mt-2 h-1 bg-surface rounded-full overflow-hidden">
                 <div className={`h-full rounded-full ${i === 0 ? "bg-gold" : "bg-muted/30"}`} style={{ width: `${s.score * 10}%` }} />
               </div>

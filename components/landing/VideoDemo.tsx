@@ -197,8 +197,8 @@ export default function VideoDemo() {
             </div>
 
             <div className="glass-gold rounded-2xl border border-gold/25 p-5">
-              <p className="text-gold font-black mb-1">النتيجة في ٣ دقائق</p>
-              <p className="text-foreground text-2xl font-black">بيع مكتمل = ٢٩٧ درهم 💰</p>
+              <p className="text-gold font-black mb-1">النتيجة في 3 دقائق</p>
+              <p className="text-foreground text-2xl font-black">بيع مكتمل = 297 درهم 💰</p>
               <p className="text-muted text-sm mt-1">بدون أي تدخل منك</p>
             </div>
 

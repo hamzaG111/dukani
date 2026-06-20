@@ -113,7 +113,7 @@ export default function MultiStorePage() {
         <div className="glass rounded-2xl border border-gold/20 p-5 flex items-center gap-4">
           <div className="text-3xl">💎</div>
           <div className="flex-1">
-            <p className="text-foreground font-bold">الخطة الاحترافية تشمل ٣ متاجر</p>
+            <p className="text-foreground font-bold">الخطة الاحترافية تشمل 3 متاجر</p>
             <p className="text-muted text-sm">الخطة البلاتينية: متاجر غير محدودة</p>
           </div>
           <a href="/pricing" className="text-gold text-sm font-black hover:underline">ترقية →</a>

@@ -16,7 +16,7 @@ const endpoints = [
   "language": "darija"
 }`,
     response: `{
-  "reply": "الجاكيت بـ٣٩٠ درهم دابا 🔥 وعندنا توصيل مجاني!",
+  "reply": "الجاكيت بـ390 درهم دابا 🔥 وعندنا توصيل مجاني!",
   "confidence": 0.97,
   "intent": "price_inquiry",
   "suggestedFollowUp": "هل تريد معرفة المقاسات المتاحة؟"
@@ -97,7 +97,7 @@ const endpoints = [
     desc: "أرسل رسالة مستهدفة لشرائح محددة من زبائنك",
     body: `{
   "segment": "vip",
-  "message": "عيد الفطر مبارك! خصم خاص ٢٠٪ لكم ❤️",
+  "message": "عيد الفطر مبارك! خصم خاص 20٪ لكم ❤️",
   "scheduleAt": "2026-03-31T09:00:00Z"
 }`,
     response: `{
@@ -147,7 +147,7 @@ const reply = await dukani.chat({
   customerId: 'cust_123',
 });
 
-console.log(reply.text); // "الجاكيت بـ٣٩٠ درهم 🔥"`;
+console.log(reply.text); // "الجاكيت بـ390 درهم 🔥"`;
 
 export default function ApiDocsPage() {
   const [activeEndpoint, setActiveEndpoint] = useState(0);
@@ -289,8 +289,8 @@ export default function ApiDocsPage() {
         {/* Rate limits */}
         <div className="mt-6 grid md:grid-cols-3 gap-4">
           {[
-            { plan: "مجاني", requests: "١٠٠/يوم", icon: "🆓" },
-            { plan: "احترافي", requests: "١٠,٠٠٠/يوم", icon: "⭐" },
+            { plan: "مجاني", requests: "100/يوم", icon: "🆓" },
+            { plan: "احترافي", requests: "10,000/يوم", icon: "⭐" },
             { plan: "بلاتيني", requests: "غير محدود", icon: "💎" },
           ].map((r, i) => (
             <div key={i} className="glass rounded-xl border border-border p-4 text-center">

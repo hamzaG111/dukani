@@ -55,7 +55,7 @@ export default function VerifyPage() {
 
         <h1 className="text-2xl font-black text-foreground mb-2">تحقق من هاتفك</h1>
         <p className="text-muted text-sm mb-8">
-          أرسلنا رمز مكوّن من ٦ أرقام إلى{" "}
+          أرسلنا رمز مكوّن من 6 أرقام إلى{" "}
           <span className="text-foreground font-semibold">+212 6** *** **78</span>
         </p>
 

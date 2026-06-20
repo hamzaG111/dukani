@@ -2,257 +2,216 @@
 
 import { motion } from "framer-motion";
 import TopBar from "@/components/dashboard/TopBar";
+import { useGamification } from "@/contexts/GamificationContext";
 
-const achievements = [
-  {
-    id: "first-sale",
-    icon: "🎉",
-    name: "أول بيع!",
-    desc: "أتممت أول صفقة بيع عبر دُكّاني",
-    earned: true,
-    date: "١٢ مايو ٢٠٢٦",
-    xp: 100,
-    rarity: "عادي",
-    rarityColor: "text-gray-400",
-  },
-  {
-    id: "speed-seller",
-    icon: "⚡",
-    name: "البائع السريع",
-    desc: "أتممت ١٠ صفقات في يوم واحد",
-    earned: true,
-    date: "٢٠ مايو ٢٠٢٦",
-    xp: 250,
-    rarity: "نادر",
-    rarityColor: "text-blue-400",
-  },
-  {
-    id: "vip-maker",
-    icon: "👑",
-    name: "صانع VIP",
-    desc: "حولت ٣ عملاء عاديين إلى VIP",
-    earned: true,
-    date: "٢٨ مايو ٢٠٢٦",
-    xp: 500,
-    rarity: "نادر جداً",
-    rarityColor: "text-purple-400",
-  },
-  {
-    id: "night-owl",
-    icon: "🦉",
-    name: "بائع الليل",
-    desc: "أُتمَّت ٥ صفقات بعد منتصف الليل تلقائياً",
-    earned: true,
-    date: "٣ يونيو ٢٠٢٦",
-    xp: 300,
-    rarity: "نادر",
-    rarityColor: "text-blue-400",
-  },
-  {
-    id: "viral-store",
-    icon: "🔥",
-    name: "المتجر الفيروسي",
-    desc: "تجاوز متجرك ١٠٠ زيارة في يوم واحد",
-    earned: false,
-    progress: 67,
-    progressMax: 100,
-    xp: 750,
-    rarity: "أسطوري",
-    rarityColor: "text-gold",
-  },
-  {
-    id: "millionaire",
-    icon: "💎",
-    name: "المليون درهم",
-    desc: "حققت مبيعات إجمالية بمليون درهم",
-    earned: false,
-    progress: 0.02,
-    progressMax: 1,
-    xp: 5000,
-    rarity: "أسطوري",
-    rarityColor: "text-gold",
-  },
-  {
-    id: "referral-king",
-    icon: "🤝",
-    name: "ملك الإحالات",
-    desc: "أحلت ١٠ تجار ناجحين",
-    earned: false,
-    progress: 3,
-    progressMax: 10,
-    xp: 1000,
-    rarity: "نادر جداً",
-    rarityColor: "text-purple-400",
-  },
-  {
-    id: "five-stars",
-    icon: "⭐",
-    name: "الخمس نجوم",
-    desc: "حافظت على تقييم ٥/٥ لمدة شهر كامل",
-    earned: false,
-    progress: 18,
-    progressMax: 30,
-    xp: 600,
-    rarity: "نادر",
-    rarityColor: "text-blue-400",
-  },
-];
-
-const level = { current: 12, name: "تاجر نشط", xp: 2150, nextXp: 3000, nextName: "تاجر محترف" };
-
-const leaderboard = [
-  { rank: 1, name: "متجر الأطلس", city: "الدار البيضاء", xp: 8420, avatar: "م" },
-  { rank: 2, name: "خزف فاس", city: "فاس", xp: 7310, avatar: "خ" },
-  { rank: 3, name: "أركان مراكش", city: "مراكش", xp: 6890, avatar: "أ" },
-  { rank: 4, name: "أنت 🏆", city: "—", xp: level.xp, avatar: "ت", isMe: true },
-  { rank: 5, name: "نجمة طنجة", city: "طنجة", xp: 1890, avatar: "ن" },
+const LEVELS = [
+  { name: "تاجر مبتدئ",   nameEn: "Beginner",  min: 0,     max: 499,   color: "#8B7355", icon: "🌱" },
+  { name: "تاجر نامٍ",    nameEn: "Growing",   min: 500,   max: 1499,  color: "#C0C0C0", icon: "📈" },
+  { name: "تاجر محترف",   nameEn: "Pro",       min: 1500,  max: 4999,  color: "#C9A84C", icon: "⭐" },
+  { name: "تاجر نخبة",    nameEn: "Elite",     min: 5000,  max: 14999, color: "#00D4FF", icon: "💎" },
+  { name: "تاجر أسطوري",  nameEn: "Legend",    min: 15000, max: Infinity, color: "#FF6B6B", icon: "👑" },
 ];
 
 export default function AchievementsPage() {
-  const earnedCount = achievements.filter(a => a.earned).length;
-  const totalXp = achievements.filter(a => a.earned).reduce((s, a) => s + a.xp, 0);
+  const { xp, streak, longestStreak, achievements, levelInfo, xpProgress, xpToNextLevel, totalConversations, totalOrders, unlockAchievement } = useGamification();
+  const currentLevelIdx = LEVELS.findIndex(l => l.name === levelInfo.name);
+  const unlocked = achievements.filter(a => a.unlocked).length;
 
   return (
     <>
-      <TopBar title="الإنجازات" subtitle="مستواك، عطاءاتك، شرفك" />
+      <TopBar title="الإنجازات والمستويات" subtitle="تتبع تقدمك واكسب المكافآت" />
+      <main className="flex-1 p-6 overflow-y-auto space-y-6">
 
-      <main className="flex-1 p-6 overflow-y-auto space-y-6 max-w-4xl">
-        {/* Level card */}
+        {/* Hero XP card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="glass-gold rounded-3xl border border-gold/25 p-6 overflow-hidden relative"
+          className="glass-gold rounded-3xl border border-gold/30 p-6"
         >
-          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gold-gradient-h" />
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl" />
-          <div className="flex items-center gap-5">
-            <div className="relative flex-shrink-0">
-              <div className="w-20 h-20 rounded-2xl bg-gold-gradient flex items-center justify-center text-background font-black text-3xl shadow-gold">
-                ت
-              </div>
-              <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-gold border-2 border-[#141414] flex items-center justify-center text-background font-black text-xs">
-                {level.current}
-              </div>
+          <div className="flex items-center gap-5 mb-6 flex-wrap">
+            <div
+              className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl border-2"
+              style={{ borderColor: levelInfo.color, background: `${levelInfo.color}15` }}
+            >
+              {LEVELS[currentLevelIdx]?.icon || "⭐"}
             </div>
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-1">
-                <p className="text-foreground font-black text-xl">المستوى {level.current}</p>
-                <span className="text-xs bg-gold/15 text-gold border border-gold/30 px-2 py-0.5 rounded-full">{level.name}</span>
-              </div>
-              <p className="text-muted text-sm mb-3">
-                {level.xp.toLocaleString("ar-MA")} / {level.nextXp.toLocaleString("ar-MA")} XP — التالي: {level.nextName}
-              </p>
-              <div className="h-2.5 bg-black/30 rounded-full overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: `${(level.xp / level.nextXp) * 100}%` }}
-                  transition={{ delay: 0.3, duration: 1 }}
-                  className="h-full bg-gold-gradient-h rounded-full"
-                />
+              <p className="text-muted text-sm mb-0.5">مستواك الحالي</p>
+              <h2 className="text-foreground font-black text-2xl" style={{ color: levelInfo.color }}>
+                {levelInfo.name}
+              </h2>
+              <div className="flex items-center gap-4 mt-1 flex-wrap">
+                <span className="text-foreground font-bold">{xp.toLocaleString()} XP</span>
+                <span className="text-muted text-sm">
+                  {xpToNextLevel > 0 ? `${xpToNextLevel.toLocaleString()} XP للمستوى التالي` : "المستوى الأعلى 🎉"}
+                </span>
               </div>
             </div>
-            <div className="text-center flex-shrink-0">
-              <p className="text-gold font-black text-3xl">{earnedCount}</p>
-              <p className="text-muted text-xs">إنجاز</p>
+            <div className="flex gap-6 text-center">
+              <div>
+                <p className="text-2xl font-black text-orange-400">🔥 {streak}</p>
+                <p className="text-muted text-xs">أيام متواصلة</p>
+              </div>
+              <div>
+                <p className="text-2xl font-black text-gold">{unlocked}/{achievements.length}</p>
+                <p className="text-muted text-xs">إنجازات</p>
+              </div>
+            </div>
+          </div>
+
+          {/* XP progress bar */}
+          <div>
+            <div className="flex justify-between text-xs text-muted mb-1.5">
+              <span>{levelInfo.name}</span>
+              <span>{xpProgress}%</span>
+              <span>{LEVELS[Math.min(currentLevelIdx + 1, LEVELS.length - 1)]?.name}</span>
+            </div>
+            <div className="h-3 bg-surface-2 rounded-full overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: `${xpProgress}%` }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+                className="h-full rounded-full"
+                style={{ background: `linear-gradient(90deg, ${levelInfo.color}60, ${levelInfo.color})` }}
+              />
             </div>
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-6">
-          {/* Achievements grid */}
-          <div className="lg:col-span-2 space-y-4">
-            <h3 className="text-foreground font-black">الإنجازات ({earnedCount}/{achievements.length})</h3>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {achievements.map((ach, i) => (
-                <motion.div
-                  key={ach.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.05 }}
-                  className={`glass rounded-2xl border p-4 relative overflow-hidden transition-all ${
-                    ach.earned
-                      ? "border-gold/20 bg-gold/5"
-                      : "border-border opacity-70"
-                  }`}
-                >
-                  {ach.earned && <div className="absolute top-0 left-0 right-0 h-0.5 bg-gold-gradient-h" />}
-
-                  <div className="flex items-start gap-3">
-                    <div className={`text-3xl flex-shrink-0 ${!ach.earned ? "grayscale opacity-40" : ""}`}>
-                      {ach.icon}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-1.5 mb-0.5">
-                        <p className={`font-black text-sm ${ach.earned ? "text-foreground" : "text-muted"}`}>{ach.name}</p>
-                        <span className={`text-[10px] font-bold ${ach.rarityColor}`}>{ach.rarity}</span>
-                      </div>
-                      <p className="text-muted text-xs leading-tight">{ach.desc}</p>
-
-                      {ach.earned ? (
-                        <div className="flex items-center gap-2 mt-2">
-                          <span className="text-gold text-xs font-bold">+{ach.xp} XP</span>
-                          <span className="text-muted text-xs">• {ach.date}</span>
-                        </div>
-                      ) : (
-                        <div className="mt-2">
-                          <div className="flex justify-between text-xs text-muted mb-1">
-                            <span>التقدم</span>
-                            <span>{ach.progress} / {ach.progressMax}</span>
-                          </div>
-                          <div className="h-1.5 bg-surface-2 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-muted/30 rounded-full"
-                              style={{ width: `${((ach.progress as number) / (ach.progressMax as number)) * 100}%` }}
-                            />
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Leaderboard */}
-          <div>
-            <h3 className="text-foreground font-black mb-4">لوحة المتصدرين 🏆</h3>
-            <div className="glass rounded-2xl border border-border overflow-hidden">
-              {leaderboard.map((entry, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.08 }}
-                  className={`flex items-center gap-3 p-4 border-b border-border last:border-0 ${
-                    entry.isMe ? "bg-gold/5 border-gold/20" : ""
-                  }`}
-                >
-                  <span className={`w-6 text-center font-black text-sm ${
-                    entry.rank === 1 ? "text-gold" : entry.rank === 2 ? "text-gray-300" : entry.rank === 3 ? "text-orange-400" : "text-muted"
-                  }`}>
-                    {entry.rank === 1 ? "🥇" : entry.rank === 2 ? "🥈" : entry.rank === 3 ? "🥉" : entry.rank}
-                  </span>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-background font-black text-sm ${entry.isMe ? "bg-gold-gradient" : "bg-surface-2 text-foreground"}`}>
-                    {entry.avatar}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className={`text-xs font-bold truncate ${entry.isMe ? "text-gold" : "text-foreground"}`}>{entry.name}</p>
-                    {entry.city !== "—" && <p className="text-muted text-[10px]">{entry.city}</p>}
-                  </div>
-                  <span className={`text-xs font-black ${entry.isMe ? "text-gold" : "text-muted"}`}>
-                    {entry.xp.toLocaleString("ar-MA")}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="mt-4 glass-gold rounded-2xl border border-gold/20 p-4 text-center">
-              <p className="text-gold font-black">+{level.nextXp - level.xp} XP</p>
-              <p className="text-muted text-xs">للوصول للمستوى التالي</p>
-            </div>
-          </div>
+        {/* Stats strip */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { icon: "🔥", label: "الحالي",    value: `${streak} يوم`,  sub: "سلسلة الأيام" },
+            { icon: "⚡", label: "الأفضل",    value: `${longestStreak} يوم`, sub: "أطول سلسلة" },
+            { icon: "💬", label: "محادثات",   value: totalConversations.toLocaleString(), sub: "إجمالي" },
+            { icon: "📦", label: "طلبيات",    value: totalOrders.toLocaleString(),        sub: "إجمالي" },
+          ].map((s, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: i * 0.07 }}
+              className="glass rounded-2xl border border-border p-4 text-center"
+            >
+              <div className="text-2xl mb-1">{s.icon}</div>
+              <p className="text-foreground font-black text-xl">{s.value}</p>
+              <p className="text-gold text-xs font-semibold">{s.label}</p>
+              <p className="text-muted text-xs">{s.sub}</p>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Level progression */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="glass rounded-3xl border border-border p-6"
+        >
+          <h3 className="text-foreground font-black mb-5">مسار المستويات</h3>
+          <div className="flex items-center gap-0 overflow-x-auto pb-2">
+            {LEVELS.map((level, i) => {
+              const isReached = xp >= level.min;
+              const isCurrent = levelInfo.name === level.name;
+              return (
+                <div key={i} className="flex items-center flex-shrink-0">
+                  <div className={`flex flex-col items-center gap-1.5 ${isCurrent ? "scale-110" : ""} transition-transform`}>
+                    <div
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl border-2 transition-all ${
+                        isReached ? "border-current" : "border-border opacity-40"
+                      } ${isCurrent ? "shadow-lg" : ""}`}
+                      style={isReached ? { borderColor: level.color, background: `${level.color}15`, color: level.color } : {}}
+                    >
+                      {level.icon}
+                    </div>
+                    <p className="text-xs font-bold whitespace-nowrap" style={isReached ? { color: level.color } : { color: "#666" }}>
+                      {level.name}
+                    </p>
+                    <p className="text-[10px] text-muted">{level.min.toLocaleString()}+ XP</p>
+                  </div>
+                  {i < LEVELS.length - 1 && (
+                    <div className={`w-8 h-0.5 mx-1 rounded-full ${xp >= LEVELS[i + 1].min ? "bg-gold" : "bg-border"}`} />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* Achievements grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="glass rounded-3xl border border-border p-6"
+        >
+          <div className="flex items-center justify-between mb-5">
+            <h3 className="text-foreground font-black">الإنجازات</h3>
+            <span className="text-muted text-xs">{unlocked} / {achievements.length} مكتسبة</span>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            {achievements.map((a, i) => (
+              <motion.div
+                key={a.id}
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.05 * i }}
+                className={`relative p-4 rounded-2xl border text-center transition-all duration-200 ${
+                  a.unlocked
+                    ? "border-gold/30 bg-gold/5 hover:border-gold/50"
+                    : "border-border opacity-50 grayscale"
+                }`}
+              >
+                {a.unlocked && (
+                  <div className="absolute top-2 right-2 w-4 h-4 rounded-full bg-green-500 flex items-center justify-center">
+                    <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                )}
+                <div className="text-3xl mb-2">{a.icon}</div>
+                <p className={`text-xs font-bold ${a.unlocked ? "text-foreground" : "text-muted"}`}>
+                  {a.titleAr}
+                </p>
+                <p className="text-gold text-xs font-semibold mt-1">+{a.xp} XP</p>
+                {a.unlockedAt && (
+                  <p className="text-muted text-[10px] mt-0.5">
+                    {new Date(a.unlockedAt).toLocaleDateString("ar-MA")}
+                  </p>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Streak tips — Cialdini: commitment */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="glass rounded-3xl border border-border p-6"
+        >
+          <h3 className="text-foreground font-black mb-4">كيف تكسب XP أكثر؟</h3>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              { icon: "📅", action: "سجّل دخولك يومياً",         xp: "+10 XP / يوم" },
+              { icon: "📦", action: "أضف منتجاً جديداً",          xp: "+25 XP" },
+              { icon: "💬", action: "استقبل 10 محادثات",          xp: "+50 XP" },
+              { icon: "🎉", action: "أنجز طلبية",                 xp: "+100 XP" },
+              { icon: "🧠", action: "أضف سؤالاً لقاعدة المعرفة",  xp: "+30 XP" },
+              { icon: "❤️", action: "فعّل برنامج الولاء",         xp: "+175 XP" },
+              { icon: "📢", action: "أرسل بثاً جماعياً",          xp: "+150 XP" },
+              { icon: "⭐", action: "رد على تقييم عميل",          xp: "+40 XP" },
+            ].map((tip, i) => (
+              <div key={i} className="flex items-center gap-3 p-3 rounded-2xl bg-surface-2 hover:bg-gold/5 transition-colors">
+                <span className="text-xl">{tip.icon}</span>
+                <span className="text-foreground text-sm flex-1">{tip.action}</span>
+                <span className="text-gold text-xs font-bold whitespace-nowrap">{tip.xp}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
       </main>
     </>
   );

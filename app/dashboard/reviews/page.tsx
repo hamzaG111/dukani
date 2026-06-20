@@ -7,10 +7,10 @@ import TopBar from "@/components/dashboard/TopBar";
 const reviews = [
   { id: 1, customer: "فاطمة الزهراء", rating: 5, product: "جاكيت جلد الأطلس", text: "الجودة ممتازة والتوصيل كان سريع جداً. المساعد الذكي ساعدني في اختيار المقاس الصحيح 🔥", date: "منذ يوم", replied: false, channel: "واتساب" },
   { id: 2, customer: "كريم بنعلي", rating: 5, product: "عطر الورد المغربي", text: "رائحة رائعة وتدوم طويلاً. سأشتري مرة أخرى بالتأكيد", date: "منذ يومين", replied: true, channel: "انستغرام" },
-  { id: 3, customer: "سناء المنصوري", rating: 4, product: "حذاء جلد بني", text: "الحذاء جميل لكن التوصيل تأخر يوم إضافي. بشكل عام تجربة ممتازة", date: "منذ ٣ أيام", replied: true, channel: "واتساب" },
+  { id: 3, customer: "سناء المنصوري", rating: 4, product: "حذاء جلد بني", text: "الحذاء جميل لكن التوصيل تأخر يوم إضافي. بشكل عام تجربة ممتازة", date: "منذ 3 أيام", replied: true, channel: "واتساب" },
   { id: 4, customer: "يوسف الأمين", rating: 5, product: "حقيبة يد فاخرة", text: "هدية مثالية لزوجتي! الحقيبة أجمل من الصور وجودتها عالية جداً", date: "منذ أسبوع", replied: false, channel: "فيسبوك" },
   { id: 5, customer: "هند الرحالي", rating: 3, product: "شال كاشمير", text: "الشال جيد لكن اللون كان مختلف قليلاً عن الصورة. الخدمة كانت ممتازة", date: "منذ أسبوع", replied: false, channel: "واتساب" },
-  { id: 6, customer: "أحمد رضا", rating: 5, product: "جاكيت جلد الأطلس", text: "أفضل متجر في المغرب! السعر معقول والجودة عالية. نصحت ٣ أصدقاء", date: "منذ أسبوعين", replied: true, channel: "انستغرام" },
+  { id: 6, customer: "أحمد رضا", rating: 5, product: "جاكيت جلد الأطلس", text: "أفضل متجر في المغرب! السعر معقول والجودة عالية. نصحت 3 أصدقاء", date: "منذ أسبوعين", replied: true, channel: "انستغرام" },
 ];
 
 const stars = (n: number) => "⭐".repeat(n) + "☆".repeat(5 - n);
@@ -58,7 +58,7 @@ export default function ReviewsPage() {
             {[
               { label: "غير مُجاب", value: reviews.filter(r => !r.replied).length, icon: "📭", urgent: true },
               { label: "معدل الرد", value: `${Math.round((reviews.filter(r => r.replied).length / reviews.length) * 100)}٪`, icon: "💬" },
-              { label: "٥ نجوم", value: reviews.filter(r => r.rating === 5).length, icon: "🌟" },
+              { label: "5 نجوم", value: reviews.filter(r => r.rating === 5).length, icon: "🌟" },
               { label: "يحتاج تحسين", value: reviews.filter(r => r.rating <= 3).length, icon: "📈" },
             ].map((s, i) => (
               <div key={i} className={`glass rounded-2xl border p-4 ${s.urgent ? "border-yellow-500/30" : "border-border"}`}>

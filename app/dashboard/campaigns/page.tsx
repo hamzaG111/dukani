@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import TopBar from "@/components/dashboard/TopBar";
 
 const pastCampaigns = [
-  { name: "عرض العيد الكبير 🎉", sent: 127, opened: 89, converted: 34, revenue: 9860, date: "١٤ يونيو ٢٠٢٦", status: "اكتملت" },
-  { name: "إعادة استهداف الغائبين", sent: 43, opened: 31, converted: 12, revenue: 3240, date: "٨ يونيو ٢٠٢٦", status: "اكتملت" },
-  { name: "منتجات جديدة — صيف ٢٠٢٦", sent: 92, opened: 67, converted: 28, revenue: 7560, date: "١ يونيو ٢٠٢٦", status: "اكتملت" },
+  { name: "عرض العيد الكبير 🎉", sent: 127, opened: 89, converted: 34, revenue: 9860, date: "14 يونيو 2026", status: "اكتملت" },
+  { name: "إعادة استهداف الغائبين", sent: 43, opened: 31, converted: 12, revenue: 3240, date: "8 يونيو 2026", status: "اكتملت" },
+  { name: "منتجات جديدة — صيف 2026", sent: 92, opened: 67, converted: 28, revenue: 7560, date: "1 يونيو 2026", status: "اكتملت" },
 ];
 
 const templates = [
@@ -43,7 +43,7 @@ function CampaignComposer({ onClose }: { onClose: () => void }) {
         <div className="p-6 border-b border-border flex items-center justify-between">
           <div>
             <h2 className="text-foreground font-black text-xl">حملة جديدة 📤</h2>
-            <p className="text-muted text-sm">الخطوة {step} من ٣</p>
+            <p className="text-muted text-sm">الخطوة {step} من 3</p>
           </div>
           <button onClick={onClose} className="text-muted hover:text-foreground text-2xl">×</button>
         </div>
@@ -96,7 +96,7 @@ function CampaignComposer({ onClose }: { onClose: () => void }) {
               <div>
                 <p className="text-foreground font-semibold text-sm mb-2">الجمهور المستهدف</p>
                 <div className="grid grid-cols-2 gap-2">
-                  {["الكل", "VIP", "الغائبون (٧+ أيام)", "الجدد فقط"].map(a => (
+                  {["الكل", "VIP", "الغائبون (7+ أيام)", "الجدد فقط"].map(a => (
                     <button
                       key={a}
                       onClick={() => setAudience(a)}
@@ -125,7 +125,7 @@ function CampaignComposer({ onClose }: { onClose: () => void }) {
                 <div className="flex justify-between text-sm">
                   <span className="text-muted">عدد المستلمين المتوقع</span>
                   <span className="text-gold font-black">
-                    {audience === "الكل" ? "١٢٧" : audience === "VIP" ? "٣٢" : audience === "الغائبون (٧+ أيام)" ? "٤٣" : "١٨"} عميل
+                    {audience === "الكل" ? "127" : audience === "VIP" ? "32" : audience === "الغائبون (7+ أيام)" ? "43" : "18"} عميل
                   </span>
                 </div>
               </div>
@@ -154,7 +154,7 @@ function CampaignComposer({ onClose }: { onClose: () => void }) {
               <div className="bg-green-500/5 border border-green-500/15 rounded-2xl p-4">
                 <p className="text-green-400 text-sm font-semibold">🎯 التوقعات بالذكاء الاصطناعي</p>
                 <p className="text-muted text-xs mt-1">
-                  بناءً على حملاتك السابقة، نتوقع معدل فتح ٧٠٪ ومعدل تحويل ٢٧٪ — أي حوالي ٣٤ طلب جديد
+                  بناءً على حملاتك السابقة، نتوقع معدل فتح 70٪ ومعدل تحويل 27٪ — أي حوالي 34 طلب جديد
                 </p>
               </div>
             </motion.div>
@@ -197,7 +197,7 @@ export default function CampaignsPage() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             { label: "حملات منجزة", value: pastCampaigns.length, icon: "📤", color: "text-foreground" },
-            { label: "إجمالي المرسل", value: "٢٦٢", icon: "👥", color: "text-blue-400" },
+            { label: "إجمالي المرسل", value: "262", icon: "👥", color: "text-blue-400" },
             { label: "طلبات محولة", value: totalConverted, icon: "🛒", color: "text-green-400" },
             { label: "إيرادات الحملات", value: `${totalRevenue.toLocaleString("ar-MA")} د.م`, icon: "💰", color: "text-gold" },
           ].map((s, i) => (

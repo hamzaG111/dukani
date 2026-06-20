@@ -29,9 +29,9 @@ export default function NotFound() {
           className="mb-8"
         >
           <div className="text-[120px] font-black leading-none select-none">
-            <span className="text-gold-gradient">٤</span>
-            <span className="text-foreground/20">٠</span>
-            <span className="text-gold-gradient">٤</span>
+            <span className="text-gold-gradient">4</span>
+            <span className="text-foreground/20">0</span>
+            <span className="text-gold-gradient">4</span>
           </div>
         </motion.div>
 

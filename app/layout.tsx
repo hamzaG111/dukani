@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { GamificationProvider } from "@/contexts/GamificationContext";
+import AchievementToast from "@/components/ui/AchievementToast";
 
 export const metadata: Metadata = {
   title: {
     default: "دُكّاني — مساعدك التجاري الذكي بالدارجة",
     template: "%s | دُكّاني",
   },
-  description: "أول نظام تجاري ذكي مصمم للتاجر العربي. يرد بالدارجة المغربية ٢٤/٧ ويبيع بدلاً عنك. إعداد في ٥ دقائق، بدون خبرة تقنية.",
+  description: "أول نظام تجاري ذكي مصمم للتاجر العربي. يرد بالدارجة المغربية 24/7 ويبيع بدلاً عنك. إعداد في 5 دقائق، بدون خبرة تقنية.",
   keywords: ["دكاني", "chatbot عربي", "مساعد تجاري ذكي", "ذكاء اصطناعي مغربي", "تجارة إلكترونية", "واتساب بوت", "دارجة", "chatbot maroc"],
   authors: [{ name: "دُكّاني" }],
   creator: "دُكّاني",
@@ -17,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "دُكّاني — مساعدك التجاري الذكي",
-    description: "يرد على عملائك بالدارجة ويبيع ٢٤/٧. ٢٠٠٠+ تاجر مغربي يثق بدُكّاني.",
+    description: "يرد على عملائك بالدارجة ويبيع 24/7. 2000+ تاجر مغربي يثق بدُكّاني.",
     locale: "ar_MA",
     type: "website",
     siteName: "دُكّاني",
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "دُكّاني — مساعدك التجاري الذكي",
-    description: "يرد على عملائك بالدارجة ويبيع ٢٤/٧",
+    description: "يرد على عملائك بالدارجة ويبيع 24/7",
   },
   robots: {
     index: true,
@@ -50,7 +53,12 @@ export default function RootLayout({
         />
       </head>
       <body className="font-cairo antialiased">
-        {children}
+        <LanguageProvider>
+          <GamificationProvider>
+            {children}
+            <AchievementToast />
+          </GamificationProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

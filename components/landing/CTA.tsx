@@ -21,7 +21,7 @@ export default function CTA() {
         >
           <div className="inline-flex items-center gap-2 border border-gold/30 bg-gold/10 px-4 py-2 rounded-full mb-8">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-gold text-sm font-semibold">٢٠٠٠+ تاجر يستخدمونه الآن</span>
+            <span className="text-gold text-sm font-semibold">2000+ تاجر يستخدمونه الآن</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 leading-tight">
@@ -48,8 +48,8 @@ export default function CTA() {
 
           <div className="flex flex-wrap justify-center gap-6 text-sm text-muted">
             {[
-              "✓ إعداد في ٥ دقائق",
-              "✓ تجربة مجانية ١٤ يوم",
+              "✓ إعداد في 5 دقائق",
+              "✓ تجربة مجانية 14 يوم",
               "✓ إلغاء في أي وقت",
               "✓ دعم بالعربية",
             ].map((item, i) => (

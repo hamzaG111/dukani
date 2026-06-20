@@ -14,10 +14,10 @@ const integrations = [
 ];
 
 const stats = [
-  { value: "٨+", label: "منصة مربوطة" },
-  { value: "٢ دقيقة", label: "وقت الإعداد" },
-  { value: "٩٩.٩٪", label: "وقت التشغيل" },
-  { value: "٠", label: "كود مطلوب" },
+  { value: "8+", label: "منصة مربوطة" },
+  { value: "2 دقيقة", label: "وقت الإعداد" },
+  { value: "99.9٪", label: "وقت التشغيل" },
+  { value: "0", label: "كود مطلوب" },
 ];
 
 export default function IntegrationsSection() {

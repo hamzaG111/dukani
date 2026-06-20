@@ -7,8 +7,8 @@ const tweets = [
     name: "محمد الزياني",
     handle: "@m_ziani_casablanca",
     avatar: "مز",
-    text: "صدقوني — بدأت باستخدام دُكّاني الأسبوع الماضي وبعت ٣ أزواج جبادور في أول يوم بدون ما أرد على أي رسالة بنفسي. الذكاء الاصطناعي فاهم الدارجة زعما بشر! 🔥",
-    time: "منذ ٣ ساعات",
+    text: "صدقوني — بدأت باستخدام دُكّاني الأسبوع الماضي وبعت 3 أزواج جبادور في أول يوم بدون ما أرد على أي رسالة بنفسي. الذكاء الاصطناعي فاهم الدارجة زعما بشر! 🔥",
+    time: "منذ 3 ساعات",
     likes: 248,
     verified: true,
     highlight: true,
@@ -18,7 +18,7 @@ const tweets = [
     handle: "@salma.boutique.fes",
     avatar: "سب",
     text: "كنت خايفة تكون معقدة بصح 5 دقائق وكان متجري جاهز. أحسن استثمار درت في حياتي لمتجري 💯",
-    time: "منذ ٥ ساعات",
+    time: "منذ 5 ساعات",
     likes: 189,
     verified: true,
     highlight: false,
@@ -27,7 +27,7 @@ const tweets = [
     name: "يوسف الكنزاوي",
     handle: "@yousef.honey.marrakech",
     avatar: "يك",
-    text: "المساعد الذكي رد على عميل الساعة 3 الصبح وباع له عسل بـ٤٥٠ درهم. أنا كنت نايم 😂 هذا هو المستقبل",
+    text: "المساعد الذكي رد على عميل الساعة 3 الصبح وباع له عسل بـ450 درهم. أنا كنت نايم 😂 هذا هو المستقبل",
     time: "منذ يوم",
     likes: 512,
     verified: false,
@@ -37,7 +37,7 @@ const tweets = [
     name: "نجاة الإدريسي",
     handle: "@najat.handmade",
     avatar: "نإ",
-    text: "كنت نخسر عملاء كيمشيو لمنافسيي لأني ما كنتش نرد بزربة. دابا ما عاد شي واحد يفوتني. مبيعاتي زادو ٨٠٪ ف شهر واحد 📈",
+    text: "كنت نخسر عملاء كيمشيو لمنافسيي لأني ما كنتش نرد بزربة. دابا ما عاد شي واحد يفوتني. مبيعاتي زادو 80٪ ف شهر واحد 📈",
     time: "منذ يومين",
     likes: 334,
     verified: true,
@@ -48,7 +48,7 @@ const tweets = [
     handle: "@omar_fashion_rabat",
     avatar: "عم",
     text: "جربت Tidio و Intercom قبل. غالية ومعقدة وما كيفهموش العربية. دُكّاني الوحيد اللي فاهم زبائني المغاربة بالدارجة",
-    time: "منذ ٣ أيام",
+    time: "منذ 3 أيام",
     likes: 421,
     verified: true,
     highlight: true,
@@ -58,7 +58,7 @@ const tweets = [
     handle: "@khadija.cosmetics",
     avatar: "خت",
     text: "ولات عندي وكيلة مبيعات ذكية شادة مكانتي على مدار الساعة. والله هاد الشي مكيوجدش 🌙",
-    time: "منذ ٤ أيام",
+    time: "منذ 4 أيام",
     likes: 267,
     verified: false,
     highlight: false,
@@ -87,7 +87,7 @@ const tweets = [
     name: "حسن الغزلاني",
     handle: "@hassan.furniture.meknes",
     avatar: "حغ",
-    text: "ROI ديالي ف أول شهر: دفعت ١٤٩ درهم واسترجعت ٣٨٠٠ درهم من مبيعات كانت غادي تضيع. 25x return 💰",
+    text: "ROI ديالي ف أول شهر: دفعت 149 درهم واسترجعت 3800 درهم من مبيعات كانت غادي تضيع. 25x return 💰",
     time: "منذ أسبوع",
     likes: 678,
     verified: true,
@@ -156,7 +156,7 @@ export default function WallOfLove() {
         >
           <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">آراء التجار</span>
           <h2 className="text-3xl md:text-5xl font-black text-foreground mb-4">
-            ٢٠٠٠+ تاجر
+            2000+ تاجر
             <br /><span className="text-gold-gradient">يحبون دُكّاني</span>
           </h2>
           <p className="text-muted text-lg">لا تصدقنا — اقرأ ما يقوله التجار أنفسهم</p>

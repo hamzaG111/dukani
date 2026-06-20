@@ -27,12 +27,12 @@ const statusConfig: Record<OrderStatus, { label: string; color: string; bg: stri
 };
 
 const orders: Order[] = [
-  { id: "ORD-٠٠١", customer: "فاطمة الزهراء", phone: "0661234567", city: "كازا", products: ["جاكيت جلد الأطلس (L)"], total: 390, status: "shipped", date: "منذ ٢ ساعة", channel: "واتساب" },
-  { id: "ORD-٠٠٢", customer: "كريم بنعلي", phone: "0662345678", city: "الرباط", products: ["عطر الورد المغربي", "شال كاشمير"], total: 560, status: "pending", date: "منذ ٣٠ دقيقة", channel: "انستغرام" },
-  { id: "ORD-٠٠٣", customer: "سناء المنصوري", phone: "0663456789", city: "مراكش", products: ["حذاء جلد بني (٣٩)"], total: 250, status: "delivered", date: "أمس", channel: "واتساب" },
-  { id: "ORD-٠٠٤", customer: "يوسف الأمين", phone: "0664567890", city: "فاس", products: ["حقيبة يد فاخرة (بني)"], total: 600, status: "confirmed", date: "منذ ٤ ساعات", channel: "فيسبوك" },
-  { id: "ORD-٠٠٥", customer: "هند الرحالي", phone: "0665678901", city: "أكادير", products: ["جاكيت جلد الأطلس (M)", "حزام جلد"], total: 490, status: "pending", date: "منذ ١٠ دقائق", channel: "واتساب" },
-  { id: "ORD-٠٠٦", customer: "أحمد رضا", phone: "0666789012", city: "طنجة", products: ["عطر الورد المغربي"], total: 280, status: "cancelled", date: "منذ يومين", channel: "انستغرام" },
+  { id: "ORD-001", customer: "فاطمة الزهراء", phone: "0661234567", city: "كازا", products: ["جاكيت جلد الأطلس (L)"], total: 390, status: "shipped", date: "منذ 2 ساعة", channel: "واتساب" },
+  { id: "ORD-002", customer: "كريم بنعلي", phone: "0662345678", city: "الرباط", products: ["عطر الورد المغربي", "شال كاشمير"], total: 560, status: "pending", date: "منذ 30 دقيقة", channel: "انستغرام" },
+  { id: "ORD-003", customer: "سناء المنصوري", phone: "0663456789", city: "مراكش", products: ["حذاء جلد بني (39)"], total: 250, status: "delivered", date: "أمس", channel: "واتساب" },
+  { id: "ORD-004", customer: "يوسف الأمين", phone: "0664567890", city: "فاس", products: ["حقيبة يد فاخرة (بني)"], total: 600, status: "confirmed", date: "منذ 4 ساعات", channel: "فيسبوك" },
+  { id: "ORD-005", customer: "هند الرحالي", phone: "0665678901", city: "أكادير", products: ["جاكيت جلد الأطلس (M)", "حزام جلد"], total: 490, status: "pending", date: "منذ 10 دقائق", channel: "واتساب" },
+  { id: "ORD-006", customer: "أحمد رضا", phone: "0666789012", city: "طنجة", products: ["عطر الورد المغربي"], total: 280, status: "cancelled", date: "منذ يومين", channel: "انستغرام" },
 ];
 
 const statusFlow: OrderStatus[] = ["pending", "confirmed", "shipped", "delivered"];

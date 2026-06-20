@@ -11,7 +11,7 @@ export default function SettingsPage() {
     storeName: "متجر الأطلس",
     description: "أحذية جلدية فاخرة بأسعار مناسبة — التوصيل متاح لجميع المدن",
     phone: "0661234567",
-    hours: "من الإثنين إلى السبت: ٩ص - ٩م",
+    hours: "من الإثنين إلى السبت: 9ص - 9م",
     address: "شارع محمد الخامس، الدار البيضاء",
     instagram: "@atlas.store",
     welcomeMsg: "مرحباً! 👋 أنا مساعد متجر الأطلس الذكي. كيف أخدمك اليوم؟",

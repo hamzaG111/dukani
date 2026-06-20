@@ -34,9 +34,9 @@ export default function TopBar({ title, subtitle }: TopBarProps) {
             <div className="absolute left-0 top-11 w-72 glass rounded-2xl border border-border shadow-card p-4 space-y-3">
               <p className="text-xs font-bold text-foreground border-b border-border pb-2">الإشعارات</p>
               {[
-                { icon: "💬", text: "عميل جديد في الشات — قبل ٥ دقائق", gold: true },
+                { icon: "💬", text: "عميل جديد في الشات — قبل 5 دقائق", gold: true },
                 { icon: "📦", text: "تم طلب منتج: جبادور بني داكن", gold: false },
-                { icon: "⭐", text: "حصلت على تقييم ٥ نجوم!", gold: false },
+                { icon: "⭐", text: "حصلت على تقييم 5 نجوم!", gold: false },
               ].map((n, i) => (
                 <div key={i} className={`flex items-start gap-2.5 p-2 rounded-xl ${n.gold ? "bg-gold/10" : ""}`}>
                   <span className="text-lg">{n.icon}</span>

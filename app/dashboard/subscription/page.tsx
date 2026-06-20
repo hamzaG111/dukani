@@ -10,14 +10,14 @@ const plans = [
     id: "free",
     name: "مجاني",
     price: 0,
-    features: ["١٠٠ محادثة/شهر", "منتج واحد", "رابط شات", "ردود بالعربية"],
+    features: ["100 محادثة/شهر", "منتج واحد", "رابط شات", "ردود بالعربية"],
     current: true,
   },
   {
     id: "basic",
     name: "الأساسي",
     price: 149,
-    features: ["١٠٠٠ محادثة/شهر", "٥٠ منتج", "رابط مخصص", "٤ لغات", "QR Code", "تحليلات أساسية", "دعم واتساب"],
+    features: ["1000 محادثة/شهر", "50 منتج", "رابط مخصص", "4 لغات", "QR Code", "تحليلات أساسية", "دعم واتساب"],
     current: false,
     popular: true,
   },
@@ -25,14 +25,14 @@ const plans = [
     id: "pro",
     name: "الاحترافي",
     price: 399,
-    features: ["محادثات لا محدودة", "منتجات لا محدودة", "روابط متعددة", "تحليلات متقدمة", "إزالة شعار دكاني", "API مخصص", "دعم ٢٤/٧"],
+    features: ["محادثات لا محدودة", "منتجات لا محدودة", "روابط متعددة", "تحليلات متقدمة", "إزالة شعار دكاني", "API مخصص", "دعم 24/7"],
     current: false,
   },
 ];
 
 const history = [
-  { date: "١ يونيو ٢٠٢٦", plan: "مجاني", amount: "٠ درهم", status: "تجربة" },
-  { date: "١ مايو ٢٠٢٦", plan: "مجاني", amount: "٠ درهم", status: "تجربة" },
+  { date: "1 يونيو 2026", plan: "مجاني", amount: "0 درهم", status: "تجربة" },
+  { date: "1 مايو 2026", plan: "مجاني", amount: "0 درهم", status: "تجربة" },
 ];
 
 export default function SubscriptionPage() {
@@ -59,7 +59,7 @@ export default function SubscriptionPage() {
               <p className="text-muted text-sm mt-1">تجربة مجانية — لا تنتهي</p>
             </div>
             <div className="text-right">
-              <span className="text-4xl font-black text-gold-gradient">٠</span>
+              <span className="text-4xl font-black text-gold-gradient">0</span>
               <span className="text-muted text-sm mr-1">درهم/شهر</span>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function SubscriptionPage() {
             <div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-foreground text-sm font-semibold">المنتجات المضافة</span>
-                <span className="text-muted text-xs">٥ / ١ (تجاوزت الحد — الترقية مطلوبة)</span>
+                <span className="text-muted text-xs">5 / 1 (تجاوزت الحد — الترقية مطلوبة)</span>
               </div>
               <div className="h-2 bg-surface rounded-full overflow-hidden">
                 <div className="h-full w-full bg-red-500 rounded-full" />

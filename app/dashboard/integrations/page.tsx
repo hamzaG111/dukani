@@ -16,8 +16,8 @@ interface Integration {
 }
 
 const integrations: Integration[] = [
-  { id: "whatsapp",   name: "واتساب بيزنس",  description: "استقبل رسائل زبائنك وأرسل ردوداً ذكية مباشرةً من واتساب",  icon: "💬", connected: true,  category: "تواصل",    stats: "٢١٢ رسالة هذا الأسبوع" },
-  { id: "instagram",  name: "انستغرام",       description: "رد على تعليقات ورسائل انستغرام بالذكاء الاصطناعي تلقائياً", icon: "📸", connected: true,  category: "تواصل",    stats: "٦٩ رسالة هذا الأسبوع" },
+  { id: "whatsapp",   name: "واتساب بيزنس",  description: "استقبل رسائل زبائنك وأرسل ردوداً ذكية مباشرةً من واتساب",  icon: "💬", connected: true,  category: "تواصل",    stats: "212 رسالة هذا الأسبوع" },
+  { id: "instagram",  name: "انستغرام",       description: "رد على تعليقات ورسائل انستغرام بالذكاء الاصطناعي تلقائياً", icon: "📸", connected: true,  category: "تواصل",    stats: "69 رسالة هذا الأسبوع" },
   { id: "facebook",   name: "فيسبوك ماسنجر", description: "تواصل مع زبائن فيسبوك بدون مغادرة لوحة دُكّاني",            icon: "📘", connected: false, category: "تواصل" },
   { id: "tiktok",     name: "تيك توك",        description: "حوّل متابعي تيك توك إلى زبائن بردود ذكية على التعليقات",    icon: "🎵", connected: false, category: "تواصل",    badge: "قريباً" },
   { id: "youcan",     name: "YouCan Shop",    description: "مزامنة منتجاتك وطلبياتك مع YouCan تلقائياً",               icon: "🛒", connected: false, category: "متاجر" },
@@ -25,7 +25,7 @@ const integrations: Integration[] = [
   { id: "shopify",    name: "Shopify",        description: "ادمج دُكّاني مع متجر شوبيفاي في دقيقتين",                  icon: "🟢", connected: false, category: "متاجر",    badge: "جديد" },
   { id: "google",     name: "Google Analytics",description: "تتبع مصادر الزيارات وسلوك الزبائن بتفصيل كامل",           icon: "📊", connected: false, category: "تحليل" },
   { id: "mailchimp",  name: "Mailchimp",      description: "أرسل حملات بريدية تلقائية بناءً على سلوك زبائنك",          icon: "🐒", connected: false, category: "تسويق" },
-  { id: "zapier",     name: "Zapier",         description: "اربط دُكّاني بأكثر من ٥٠٠٠ تطبيق عبر Zapier",             icon: "⚡", connected: false, category: "أتمتة",    badge: "قريباً" },
+  { id: "zapier",     name: "Zapier",         description: "اربط دُكّاني بأكثر من 5000 تطبيق عبر Zapier",             icon: "⚡", connected: false, category: "أتمتة",    badge: "قريباً" },
   { id: "stripe",     name: "Stripe",         description: "استقبل المدفوعات الإلكترونية مباشرة في محادثة واتساب",      icon: "💳", connected: false, category: "دفع" },
   { id: "cmimoney",   name: "CMI / HPS",      description: "الدفع الإلكتروني المغربي عبر بطاقات CMI و Visa / MC",     icon: "🏦", connected: false, category: "دفع",      badge: "قريباً" },
 ];

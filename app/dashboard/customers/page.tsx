@@ -5,14 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import TopBar from "@/components/dashboard/TopBar";
 
 const customers = [
-  { id: 1, name: "محمد الزياني", phone: "+212 661 234 001", city: "الدار البيضاء", orders: 7, ltv: 2190, lastSeen: "منذ ٢ ساعات", status: "vip", avatar: "مز", tags: ["مخلص", "يحب العروض"] },
+  { id: 1, name: "محمد الزياني", phone: "+212 661 234 001", city: "الدار البيضاء", orders: 7, ltv: 2190, lastSeen: "منذ 2 ساعات", status: "vip", avatar: "مز", tags: ["مخلص", "يحب العروض"] },
   { id: 2, name: "فاطمة بنعلي", phone: "+212 661 234 002", city: "مراكش", orders: 3, ltv: 840, lastSeen: "منذ يوم", status: "active", avatar: "فب", tags: ["جديد"] },
-  { id: 3, name: "يوسف الإدريسي", phone: "+212 661 234 003", city: "فاس", orders: 12, ltv: 3600, lastSeen: "منذ ٣ أيام", status: "vip", avatar: "يإ", tags: ["مخلص", "مشتري متكرر"] },
+  { id: 3, name: "يوسف الإدريسي", phone: "+212 661 234 003", city: "فاس", orders: 12, ltv: 3600, lastSeen: "منذ 3 أيام", status: "vip", avatar: "يإ", tags: ["مخلص", "مشتري متكرر"] },
   { id: 4, name: "سارة المنصوري", phone: "+212 661 234 004", city: "طنجة", orders: 1, ltv: 297, lastSeen: "منذ أسبوع", status: "new", avatar: "سم", tags: ["جديد"] },
   { id: 5, name: "حسن الكنزاوي", phone: "+212 661 234 005", city: "الرباط", orders: 5, ltv: 1450, lastSeen: "منذ ساعة", status: "active", avatar: "حك", tags: ["يسأل كثيراً"] },
-  { id: 6, name: "نجاة الغزلاني", phone: "+212 661 234 006", city: "أكادير", orders: 2, ltv: 560, lastSeen: "منذ ٤ أيام", status: "at-risk", avatar: "نغ", tags: ["غائب"] },
+  { id: 6, name: "نجاة الغزلاني", phone: "+212 661 234 006", city: "أكادير", orders: 2, ltv: 560, lastSeen: "منذ 4 أيام", status: "at-risk", avatar: "نغ", tags: ["غائب"] },
   { id: 7, name: "عمر التوارغي", phone: "+212 661 234 007", city: "وجدة", orders: 9, ltv: 2700, lastSeen: "منذ ساعتين", status: "vip", avatar: "عت", tags: ["مخلص", "يحب الجديد"] },
-  { id: 8, name: "خديجة العلوي", phone: "+212 661 234 008", city: "مكناس", orders: 4, ltv: 980, lastSeen: "منذ ٥ أيام", status: "active", avatar: "خع", tags: ["يهتم بالسعر"] },
+  { id: 8, name: "خديجة العلوي", phone: "+212 661 234 008", city: "مكناس", orders: 4, ltv: 980, lastSeen: "منذ 5 أيام", status: "active", avatar: "خع", tags: ["يهتم بالسعر"] },
 ];
 
 const segments = [
@@ -32,11 +32,11 @@ const statusConfig = {
 
 function CustomerDetail({ customer, onClose }: { customer: typeof customers[0]; onClose: () => void }) {
   const mockMessages = [
-    { from: "customer", text: "السلام، عندكم جبادور بني؟", time: "١٠:٢٣" },
-    { from: "ai", text: "وعليكم السلام! نعم عندنا 3 ألوان. البني الداكن بـ٢٩٧ د.م", time: "١٠:٢٣" },
-    { from: "customer", text: "باغيه بمقاس ٤٣", time: "١٠:٢٤" },
-    { from: "ai", text: "ممتاز! مقاس ٤٣ موجود. هل تبغي نضيفه للطلب؟", time: "١٠:٢٤" },
-    { from: "customer", text: "واه، عطيني الرابط", time: "١٠:٢٤" },
+    { from: "customer", text: "السلام، عندكم جبادور بني؟", time: "10:23" },
+    { from: "ai", text: "وعليكم السلام! نعم عندنا 3 ألوان. البني الداكن بـ297 د.م", time: "10:23" },
+    { from: "customer", text: "باغيه بمقاس 43", time: "10:24" },
+    { from: "ai", text: "ممتاز! مقاس 43 موجود. هل تبغي نضيفه للطلب؟", time: "10:24" },
+    { from: "customer", text: "واه، عطيني الرابط", time: "10:24" },
   ];
 
   return (
@@ -186,7 +186,7 @@ export default function CustomersPage() {
           <div className="flex-1">
             <p className="text-foreground font-bold text-sm">رؤية ذكية</p>
             <p className="text-muted text-xs mt-0.5">
-              نجاة الغزلاني لم تشترِ منذ ٤ أيام — أرسل لها عرضاً شخصياً بخصم ١٠٪ لاستعادتها.
+              نجاة الغزلاني لم تشترِ منذ 4 أيام — أرسل لها عرضاً شخصياً بخصم 10٪ لاستعادتها.
               يوسف الإدريسي مشترٍ متكرر — يُرجَّح أنه سيشتري مجدداً قريباً.
             </p>
           </div>

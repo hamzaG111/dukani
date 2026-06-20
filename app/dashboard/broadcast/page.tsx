@@ -37,7 +37,7 @@ const templates = [
     id: "birthday",
     label: "تهنئة عيد الميلاد",
     icon: "🎂",
-    text: "كل عام وأنت بخير {الاسم}! 🎂 هدية منا بمناسبة عيد ميلادك: كود {BDAY20} خصم ٢٠٪ 🎁",
+    text: "كل عام وأنت بخير {الاسم}! 🎂 هدية منا بمناسبة عيد ميلادك: كود {BDAY20} خصم 20٪ 🎁",
     tags: ["ولاء", "شخصي"],
   },
   {
@@ -52,15 +52,15 @@ const templates = [
 const segments = [
   { id: "all", label: "كل الزبائن", count: 312, icon: "👥" },
   { id: "vip", label: "VIP", count: 47, icon: "💎" },
-  { id: "active", label: "نشطون (٧ أيام)", count: 128, icon: "🔥" },
-  { id: "inactive", label: "غير نشطين (٣٠+ يوم)", count: 89, icon: "😴" },
+  { id: "active", label: "نشطون (7 أيام)", count: 128, icon: "🔥" },
+  { id: "inactive", label: "غير نشطين (30+ يوم)", count: 89, icon: "😴" },
   { id: "new", label: "زبائن جدد", count: 48, icon: "✨" },
 ];
 
 const history = [
-  { name: "حملة رمضان ٢٠٢٦", sent: 289, opened: 231, replied: 94, date: "١٥ مارس", status: "مكتملة" },
-  { name: "عيد الأضحى — عرض خاص", sent: 156, opened: 134, replied: 61, date: "٢٨ مارس", status: "مكتملة" },
-  { name: "منتج جديد: حقيبة يد فاخرة", sent: 200, opened: 178, replied: 89, date: "٥ أبريل", status: "مكتملة" },
+  { name: "حملة رمضان 2026", sent: 289, opened: 231, replied: 94, date: "15 مارس", status: "مكتملة" },
+  { name: "عيد الأضحى — عرض خاص", sent: 156, opened: 134, replied: 61, date: "28 مارس", status: "مكتملة" },
+  { name: "منتج جديد: حقيبة يد فاخرة", sent: 200, opened: 178, replied: 89, date: "5 أبريل", status: "مكتملة" },
 ];
 
 export default function BroadcastPage() {
@@ -194,8 +194,8 @@ export default function BroadcastPage() {
                       className="w-full bg-surface border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted text-sm focus:outline-none focus:border-gold/40 resize-none"
                     />
                     <div className="flex justify-between mt-2">
-                      <span className="text-muted text-xs">{customMsg.length}/١٠٠٠ حرف</span>
-                      <span className="text-muted text-xs">واتساب يدعم حتى ١٦٠٠ حرف</span>
+                      <span className="text-muted text-xs">{customMsg.length}/1000 حرف</span>
+                      <span className="text-muted text-xs">واتساب يدعم حتى 1600 حرف</span>
                     </div>
                   </div>
 
@@ -264,7 +264,7 @@ export default function BroadcastPage() {
 
                   <div className="glass-gold rounded-2xl border border-gold/20 p-4 flex items-center gap-3">
                     <span className="text-2xl">💡</span>
-                    <p className="text-muted text-sm">أفضل وقت للإرسال هو بين ٩ص و١١ص — معدل فتح أعلى بـ٤٠٪</p>
+                    <p className="text-muted text-sm">أفضل وقت للإرسال هو بين 9ص و11ص — معدل فتح أعلى بـ40٪</p>
                   </div>
 
                   <div className="flex gap-3">

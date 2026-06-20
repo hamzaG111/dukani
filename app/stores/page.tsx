@@ -4,14 +4,14 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const stores = [
-  { id: "atlas-store", name: "متجر الأطلس", category: "أحذية جلدية", avatar: "م", location: "الدار البيضاء", rating: 4.9, reviews: 127, products: 6, hot: true, responseTime: "أقل من ٣ دقائق" },
-  { id: "najmat-tanger", name: "نجمة طنجة", category: "مجوهرات يدوية", avatar: "ن", location: "طنجة", rating: 4.8, reviews: 89, products: 24, hot: false, responseTime: "أقل من ٥ دقائق" },
+  { id: "atlas-store", name: "متجر الأطلس", category: "أحذية جلدية", avatar: "م", location: "الدار البيضاء", rating: 4.9, reviews: 127, products: 6, hot: true, responseTime: "أقل من 3 دقائق" },
+  { id: "najmat-tanger", name: "نجمة طنجة", category: "مجوهرات يدوية", avatar: "ن", location: "طنجة", rating: 4.8, reviews: 89, products: 24, hot: false, responseTime: "أقل من 5 دقائق" },
   { id: "argan-marrakech", name: "أركان مراكش", category: "منتجات طبيعية", avatar: "أ", location: "مراكش", rating: 5.0, reviews: 203, products: 18, hot: true, responseTime: "أقل من دقيقتين" },
-  { id: "honey-agadir", name: "عسل أكادير", category: "عسل وزيوت", avatar: "ع", location: "أكادير", rating: 4.7, reviews: 56, products: 9, hot: false, responseTime: "أقل من ١٠ دقائق" },
-  { id: "fashion-rabat", name: "فاشون الرباط", category: "ملابس عصرية", avatar: "ف", location: "الرباط", rating: 4.6, reviews: 144, products: 47, hot: false, responseTime: "أقل من ٥ دقائق" },
-  { id: "ceramique-fes", name: "خزف فاس", category: "سيراميك وفخار", avatar: "خ", location: "فاس", rating: 4.9, reviews: 78, products: 32, hot: true, responseTime: "أقل من ٣ دقائق" },
-  { id: "electronics-casa", name: "تكنو الدار البيضاء", category: "إلكترونيات", avatar: "ت", location: "الدار البيضاء", rating: 4.5, reviews: 312, products: 89, hot: false, responseTime: "أقل من ١٥ دقيقة" },
-  { id: "plants-meknes", name: "نباتات مكناس", category: "نباتات وأزهار", avatar: "ب", location: "مكناس", rating: 4.8, reviews: 41, products: 65, hot: false, responseTime: "أقل من ٥ دقائق" },
+  { id: "honey-agadir", name: "عسل أكادير", category: "عسل وزيوت", avatar: "ع", location: "أكادير", rating: 4.7, reviews: 56, products: 9, hot: false, responseTime: "أقل من 10 دقائق" },
+  { id: "fashion-rabat", name: "فاشون الرباط", category: "ملابس عصرية", avatar: "ف", location: "الرباط", rating: 4.6, reviews: 144, products: 47, hot: false, responseTime: "أقل من 5 دقائق" },
+  { id: "ceramique-fes", name: "خزف فاس", category: "سيراميك وفخار", avatar: "خ", location: "فاس", rating: 4.9, reviews: 78, products: 32, hot: true, responseTime: "أقل من 3 دقائق" },
+  { id: "electronics-casa", name: "تكنو الدار البيضاء", category: "إلكترونيات", avatar: "ت", location: "الدار البيضاء", rating: 4.5, reviews: 312, products: 89, hot: false, responseTime: "أقل من 15 دقيقة" },
+  { id: "plants-meknes", name: "نباتات مكناس", category: "نباتات وأزهار", avatar: "ب", location: "مكناس", rating: 4.8, reviews: 41, products: 65, hot: false, responseTime: "أقل من 5 دقائق" },
   { id: "coffee-oujda", name: "قهوة وجدة", category: "قهوة ومشروبات", avatar: "ق", location: "وجدة", rating: 4.9, reviews: 95, products: 12, hot: true, responseTime: "أقل من دقيقتين" },
 ];
 

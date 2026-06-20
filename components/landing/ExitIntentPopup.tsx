@@ -76,7 +76,7 @@ export default function ExitIntentPopup() {
                     انتظر! هدية قبل ما تمشي
                   </h2>
                   <p className="text-white/60 mb-6 text-sm leading-relaxed">
-                    احصل مجاناً على <strong className="text-gold">دليل ٢٠ رسالة مبيعات بالدارجة</strong> — تستخدمها لرفع مبيعاتك فوراً
+                    احصل مجاناً على <strong className="text-gold">دليل 20 رسالة مبيعات بالدارجة</strong> — تستخدمها لرفع مبيعاتك فوراً
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-3">

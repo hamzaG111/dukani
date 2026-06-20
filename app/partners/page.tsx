@@ -9,18 +9,18 @@ const tiers = [
   {
     name: "شريك فضي",
     icon: "🥈",
-    commission: "٢٠٪",
-    minReferrals: "٥",
-    perks: ["٢٠٪ عمولة مدى الحياة", "لوحة تحكم للشركاء", "دعم مخصص", "مواد تسويقية"],
+    commission: "20٪",
+    minReferrals: "5",
+    perks: ["20٪ عمولة مدى الحياة", "لوحة تحكم للشركاء", "دعم مخصص", "مواد تسويقية"],
     color: "border-gray-400/30 bg-gray-500/5",
     textColor: "text-gray-300",
   },
   {
     name: "شريك ذهبي",
     icon: "🥇",
-    commission: "٣٠٪",
-    minReferrals: "٢٠",
-    perks: ["٣٠٪ عمولة مدى الحياة", "صفحة شريك مخصصة", "مدير حساب شخصي", "تدريب مجاني", "شارة معتمد"],
+    commission: "30٪",
+    minReferrals: "20",
+    perks: ["30٪ عمولة مدى الحياة", "صفحة شريك مخصصة", "مدير حساب شخصي", "تدريب مجاني", "شارة معتمد"],
     color: "border-gold/30 bg-gold/5",
     textColor: "text-gold",
     highlight: true,
@@ -28,9 +28,9 @@ const tiers = [
   {
     name: "شريك بلاتيني",
     icon: "💎",
-    commission: "٤٠٪",
-    minReferrals: "٥٠",
-    perks: ["٤٠٪ عمولة مدى الحياة", "حصة من الأرباح", "أولوية في المميزات", "شراكة استراتيجية", "دعوة لمؤتمر سنوي"],
+    commission: "40٪",
+    minReferrals: "50",
+    perks: ["40٪ عمولة مدى الحياة", "حصة من الأرباح", "أولوية في المميزات", "شراكة استراتيجية", "دعوة لمؤتمر سنوي"],
     color: "border-cyan-400/30 bg-cyan-500/5",
     textColor: "text-cyan-400",
   },
@@ -69,7 +69,7 @@ export default function PartnersPage() {
                 <span className="text-gold-gradient"> تاجر تُرشده</span>
               </h1>
               <p className="text-muted text-xl max-w-2xl mx-auto mb-10">
-                انضم لشبكة شركائنا المتنامية واكسب عمولة تصل إلى ٤٠٪ من كل اشتراك — مدى الحياة.
+                انضم لشبكة شركائنا المتنامية واكسب عمولة تصل إلى 40٪ من كل اشتراك — مدى الحياة.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#apply" className="bg-gold-gradient text-background font-black px-8 py-4 rounded-2xl text-lg hover:shadow-gold-strong transition-all hover:-translate-y-0.5">
@@ -87,10 +87,10 @@ export default function PartnersPage() {
         <section className="py-12 px-6 bg-surface-2">
           <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: "٤٠٪", label: "أعلى عمولة" },
-              { value: "٢٠٠٠+", label: "تاجر في الشبكة" },
+              { value: "40٪", label: "أعلى عمولة" },
+              { value: "2000+", label: "تاجر في الشبكة" },
               { value: "مدى الحياة", label: "نوع العمولة" },
-              { value: "٤٨ ساعة", label: "وقت الموافقة" },
+              { value: "48 ساعة", label: "وقت الموافقة" },
             ].map((s, i) => (
               <motion.div
                 key={i}
@@ -179,7 +179,7 @@ export default function PartnersPage() {
           <div className="max-w-2xl mx-auto">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
               <h2 className="text-3xl font-black text-foreground">قدّم طلبك</h2>
-              <p className="text-muted mt-2">سنراجع طلبك ونتواصل معك خلال ٤٨ ساعة</p>
+              <p className="text-muted mt-2">سنراجع طلبك ونتواصل معك خلال 48 ساعة</p>
             </motion.div>
 
             {submitted ? (
@@ -190,7 +190,7 @@ export default function PartnersPage() {
               >
                 <div className="text-5xl mb-4">🎉</div>
                 <h3 className="text-2xl font-black text-foreground mb-2">تم استلام طلبك!</h3>
-                <p className="text-muted">سنتواصل معك خلال ٤٨ ساعة على بريدك الإلكتروني</p>
+                <p className="text-muted">سنتواصل معك خلال 48 ساعة على بريدك الإلكتروني</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="glass rounded-3xl border border-border p-8 space-y-5">

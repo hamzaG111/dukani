@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 const sections = [
   {
-    title: "١. المعلومات التي نجمعها",
+    title: "1. المعلومات التي نجمعها",
     content: [
       "معلومات الحساب: الاسم، البريد الإلكتروني، رقم الهاتف.",
       "بيانات المتجر: قائمة المنتجات، الأسعار، ساعات العمل.",
@@ -16,7 +16,7 @@ const sections = [
     ],
   },
   {
-    title: "٢. كيف نستخدم معلوماتك",
+    title: "2. كيف نستخدم معلوماتك",
     content: [
       "تشغيل خدمة المساعد الذكي والرد على زبائنك.",
       "تحسين دقة الذكاء الاصطناعي وفهمه للدارجة المغربية.",
@@ -25,7 +25,7 @@ const sections = [
     ],
   },
   {
-    title: "٣. مشاركة البيانات",
+    title: "3. مشاركة البيانات",
     content: [
       "لا نبيع بياناتك أو بيانات زبائنك لأي طرف ثالث.",
       "نشارك البيانات فقط مع مزودي الخدمة الضروريين (مثل خوادم السحابة) وبموجب اتفاقيات صارمة.",
@@ -33,7 +33,7 @@ const sections = [
     ],
   },
   {
-    title: "٤. أمان البيانات",
+    title: "4. أمان البيانات",
     content: [
       "تشفير كامل لجميع البيانات أثناء النقل (SSL/TLS).",
       "تشفير قواعد البيانات أثناء التخزين.",
@@ -42,7 +42,7 @@ const sections = [
     ],
   },
   {
-    title: "٥. حقوقك",
+    title: "5. حقوقك",
     content: [
       "الوصول إلى جميع بياناتك المحفوظة لدينا.",
       "طلب تصحيح أو حذف بياناتك في أي وقت.",
@@ -51,7 +51,7 @@ const sections = [
     ],
   },
   {
-    title: "٦. ملفات تعريف الارتباط (Cookies)",
+    title: "6. ملفات تعريف الارتباط (Cookies)",
     content: [
       "نستخدم ملفات تعريف الارتباط الضرورية لتشغيل المنصة.",
       "ملفات التحليل (مجهولة الهوية) لتحسين تجربة الاستخدام.",
@@ -67,7 +67,7 @@ export default function PrivacyPage() {
         <div className="max-w-3xl mx-auto px-6 py-12">
           <span className="text-gold text-xs font-black tracking-widest uppercase border border-gold/30 bg-gold/10 px-3 py-1 rounded-full mb-4 inline-block">قانوني</span>
           <h1 className="text-4xl font-black text-foreground mb-2">سياسة الخصوصية</h1>
-          <p className="text-muted">آخر تحديث: ١٩ يونيو ٢٠٢٦</p>
+          <p className="text-muted">آخر تحديث: 19 يونيو 2026</p>
         </div>
       </div>
 

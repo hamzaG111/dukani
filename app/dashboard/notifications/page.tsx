@@ -25,16 +25,16 @@ const typeConfig: Record<NType, { icon: string; color: string; bg: string }> = {
 };
 
 const initial: Notif[] = [
-  { id: 1,  type: "sale",        title: "مبيعة جديدة! 🎉",              body: "فاطمة الزهراء اشترت جاكيت جلد الأطلس بـ٣٩٠ درهم",        time: "منذ ٣ دقائق",  read: false, action: "/dashboard/orders" },
-  { id: 2,  type: "message",     title: "رسالة جديدة",                    body: "كريم بنعلي يسأل عن توفر حذاء بمقاس ٤٢",                   time: "منذ ٨ دقائق",  read: false, action: "/dashboard/conversations" },
-  { id: 3,  type: "achievement", title: "إنجاز جديد! 🏆",               body: "حققت هدف ١٠٠ محادثة الشهرية — حصلت على شارة المتحدث",      time: "منذ ٢٠ دقيقة", read: false, action: "/dashboard/achievements" },
-  { id: 4,  type: "alert",       title: "مخزون منخفض",                   body: "جاكيت جلد الأطلس (L): تبقى ٢ قطعة فقط!",                  time: "منذ ساعة",     read: false, action: "/dashboard/inventory" },
-  { id: 5,  type: "sale",        title: "مبيعة جديدة! 🎉",              body: "يوسف الأمين اشترى حقيبة يد فاخرة بـ٦٠٠ درهم",             time: "منذ ٢ ساعة",   read: true,  action: "/dashboard/orders" },
-  { id: 6,  type: "message",     title: "٣ رسائل لم تُقرأ",             body: "عندك ٣ محادثات تحتاج ردك في أسرع وقت",                    time: "منذ ٣ ساعات",  read: true,  action: "/dashboard/conversations" },
+  { id: 1,  type: "sale",        title: "مبيعة جديدة! 🎉",              body: "فاطمة الزهراء اشترت جاكيت جلد الأطلس بـ390 درهم",        time: "منذ 3 دقائق",  read: false, action: "/dashboard/orders" },
+  { id: 2,  type: "message",     title: "رسالة جديدة",                    body: "كريم بنعلي يسأل عن توفر حذاء بمقاس 42",                   time: "منذ 8 دقائق",  read: false, action: "/dashboard/conversations" },
+  { id: 3,  type: "achievement", title: "إنجاز جديد! 🏆",               body: "حققت هدف 100 محادثة الشهرية — حصلت على شارة المتحدث",      time: "منذ 20 دقيقة", read: false, action: "/dashboard/achievements" },
+  { id: 4,  type: "alert",       title: "مخزون منخفض",                   body: "جاكيت جلد الأطلس (L): تبقى 2 قطعة فقط!",                  time: "منذ ساعة",     read: false, action: "/dashboard/inventory" },
+  { id: 5,  type: "sale",        title: "مبيعة جديدة! 🎉",              body: "يوسف الأمين اشترى حقيبة يد فاخرة بـ600 درهم",             time: "منذ 2 ساعة",   read: true,  action: "/dashboard/orders" },
+  { id: 6,  type: "message",     title: "3 رسائل لم تُقرأ",             body: "عندك 3 محادثات تحتاج ردك في أسرع وقت",                    time: "منذ 3 ساعات",  read: true,  action: "/dashboard/conversations" },
   { id: 7,  type: "system",      title: "تحديث النظام",                   body: "تم تحديث مساعدك الذكي بإمكانيات أفضل للتعامل بالدارجة",    time: "أمس",          read: true  },
-  { id: 8,  type: "alert",       title: "تقرب من الحد الأقصى",           body: "استخدمت ٧٣ محادثة من ١٠٠ — فكّر في الترقية قبل النفاذ",   time: "أمس",          read: true,  action: "/dashboard/subscription" },
-  { id: 9,  type: "achievement", title: "أسبوع ممتاز! 🔥",              body: "حققت ٢٨ مبيعة هذا الأسبوع — أعلى من الأسبوع الماضي بـ٤٠٪", time: "منذ يومين",    read: true,  action: "/dashboard/analytics" },
-  { id: 10, type: "sale",        title: "أعلى مبيعة اليوم",              body: "هند الرحالي اشترت منتجات بـ٤٩٠ درهم دفعة واحدة",          time: "منذ يومين",    read: true,  action: "/dashboard/orders" },
+  { id: 8,  type: "alert",       title: "تقرب من الحد الأقصى",           body: "استخدمت 73 محادثة من 100 — فكّر في الترقية قبل النفاذ",   time: "أمس",          read: true,  action: "/dashboard/subscription" },
+  { id: 9,  type: "achievement", title: "أسبوع ممتاز! 🔥",              body: "حققت 28 مبيعة هذا الأسبوع — أعلى من الأسبوع الماضي بـ40٪", time: "منذ يومين",    read: true,  action: "/dashboard/analytics" },
+  { id: 10, type: "sale",        title: "أعلى مبيعة اليوم",              body: "هند الرحالي اشترت منتجات بـ490 درهم دفعة واحدة",          time: "منذ يومين",    read: true,  action: "/dashboard/orders" },
 ];
 
 export default function NotificationsPage() {

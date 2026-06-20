@@ -47,7 +47,7 @@ export default function HowItWorks() {
         >
           <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">كيف يعمل</span>
           <h2 className="text-3xl md:text-4xl font-black text-foreground mb-4">
-            ٣ خطوات وأنت جاهز
+            3 خطوات وأنت جاهز
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
             لا حاجة لخبرة تقنية. إذا كنت تعرف كيف ترسل رسالة واتساب، يمكنك إعداد دُكّاني
@@ -94,7 +94,7 @@ export default function HowItWorks() {
           transition={{ delay: 0.5 }}
           className="text-center mt-12"
         >
-          <p className="text-muted text-sm mb-4">جاهز في أقل من ٥ دقائق — مضمون</p>
+          <p className="text-muted text-sm mb-4">جاهز في أقل من 5 دقائق — مضمون</p>
           <button className="inline-flex items-center gap-2 bg-gold-gradient text-background font-bold px-8 py-4 rounded-2xl hover:shadow-gold-strong transition-shadow duration-300 hover:-translate-y-0.5 transition-transform">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />

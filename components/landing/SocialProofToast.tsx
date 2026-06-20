@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const proofEvents = [
-  { name: "محمد ز.", city: "الدار البيضاء", action: "اشترك للتو في الخطة الاحترافية", time: "منذ ٣٢ ثانية", icon: "🚀" },
-  { name: "سلمى ب.", city: "مراكش", action: "ربح ٤٢٠ درهم من محادثة واحدة", time: "منذ دقيقتين", icon: "💰" },
-  { name: "يوسف ك.", city: "فاس", action: "أتم إعداد متجره في ٤ دقائق", time: "منذ ٥ دقائق", icon: "⚡" },
-  { name: "نجاة إ.", city: "طنجة", action: "حصلت على ٧ طلبات جديدة الليلة", time: "منذ ٨ دقائق", icon: "🎉" },
-  { name: "حسن م.", city: "الرباط", action: "بدأ نسخته المجانية الآن", time: "منذ ١٢ دقيقة", icon: "✅" },
-  { name: "فاطمة ز.", city: "أكادير", action: "رفعت مبيعاتها ٨٠٪ هذا الشهر", time: "منذ ١٥ دقيقة", icon: "📈" },
+  { name: "محمد ز.", city: "الدار البيضاء", action: "اشترك للتو في الخطة الاحترافية", time: "منذ 32 ثانية", icon: "🚀" },
+  { name: "سلمى ب.", city: "مراكش", action: "ربح 420 درهم من محادثة واحدة", time: "منذ دقيقتين", icon: "💰" },
+  { name: "يوسف ك.", city: "فاس", action: "أتم إعداد متجره في 4 دقائق", time: "منذ 5 دقائق", icon: "⚡" },
+  { name: "نجاة إ.", city: "طنجة", action: "حصلت على 7 طلبات جديدة الليلة", time: "منذ 8 دقائق", icon: "🎉" },
+  { name: "حسن م.", city: "الرباط", action: "بدأ نسخته المجانية الآن", time: "منذ 12 دقيقة", icon: "✅" },
+  { name: "فاطمة ز.", city: "أكادير", action: "رفعت مبيعاتها 80٪ هذا الشهر", time: "منذ 15 دقيقة", icon: "📈" },
 ];
 
 export default function SocialProofToast() {

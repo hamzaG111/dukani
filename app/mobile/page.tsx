@@ -41,7 +41,7 @@ export default function MobileAppPage() {
                 <span className="text-gold block">في أي مكان</span>
               </h1>
               <p className="text-muted text-lg leading-relaxed mb-8">
-                تطبيق دُكّاني المحمول يجعلك متصلاً بمتجرك ٢٤/٧. راقب مبيعاتك، استقبل محادثاتك، وتحكم في ذكائك الاصطناعي — كل ذلك من شاشة هاتفك.
+                تطبيق دُكّاني المحمول يجعلك متصلاً بمتجرك 24/7. راقب مبيعاتك، استقبل محادثاتك، وتحكم في ذكائك الاصطناعي — كل ذلك من شاشة هاتفك.
               </p>
 
               {!submitted ? (
@@ -62,7 +62,7 @@ export default function MobileAppPage() {
                       تنبّهني
                     </button>
                   </form>
-                  <p className="text-muted text-xs mt-2">+٣,٤٠٠ تاجر في قائمة الانتظار</p>
+                  <p className="text-muted text-xs mt-2">+3,400 تاجر في قائمة الانتظار</p>
                 </div>
               ) : (
                 <motion.div
@@ -107,7 +107,7 @@ export default function MobileAppPage() {
                 <div className="w-64 h-[500px] bg-[#0a0a0a] rounded-[3rem] border-4 border-[#333] shadow-2xl shadow-gold/10 overflow-hidden relative">
                   {/* Status bar */}
                   <div className="bg-[#111] px-5 pt-3 pb-2 flex justify-between items-center">
-                    <span className="text-white text-[10px]">٩:٤١</span>
+                    <span className="text-white text-[10px]">9:41</span>
                     <div className="w-20 h-5 bg-[#111] rounded-full border border-[#333]" />
                     <span className="text-white text-[10px]">●●●</span>
                   </div>
@@ -184,10 +184,10 @@ export default function MobileAppPage() {
       <section className="bg-surface border-y border-border py-14">
         <div className="max-w-4xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "< ٢ ثانية", label: "زمن الاستجابة" },
-            { value: "٩٩.٩٪", label: "وقت التشغيل" },
-            { value: "٤.٩ ⭐", label: "تقييم متوقع" },
-            { value: "٢٤/٧", label: "دعم فني" },
+            { value: "< 2 ثانية", label: "زمن الاستجابة" },
+            { value: "99.9٪", label: "وقت التشغيل" },
+            { value: "4.9 ⭐", label: "تقييم متوقع" },
+            { value: "24/7", label: "دعم فني" },
           ].map((s, i) => (
             <motion.div
               key={i}
@@ -206,7 +206,7 @@ export default function MobileAppPage() {
       <section className="max-w-2xl mx-auto px-6 py-20 text-center">
         <div className="text-5xl mb-5">🚀</div>
         <h2 className="text-3xl font-black text-foreground mb-4">كن على القائمة</h2>
-        <p className="text-muted mb-8">أول ٥٠٠ تاجر سيحصلون على الإصدار التجريبي مجاناً مع مكافآت حصرية</p>
+        <p className="text-muted mb-8">أول 500 تاجر سيحصلون على الإصدار التجريبي مجاناً مع مكافآت حصرية</p>
         {!submitted && (
           <form
             onSubmit={e => { e.preventDefault(); if (email) setSubmitted(true); }}

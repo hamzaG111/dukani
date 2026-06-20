@@ -12,7 +12,7 @@ const plans = [
     currency: "درهم",
     description: "ابدأ مجاناً واكتشف قوة دُكّاني",
     features: [
-      "١٠٠ محادثة شهرياً",
+      "100 محادثة شهرياً",
       "منتج واحد",
       "رابط شات واحد",
       "ردود بالعربية والدارجة",
@@ -30,10 +30,10 @@ const plans = [
     currency: "درهم/شهر",
     description: "للتاجر الجاد الذي يريد النمو",
     features: [
-      "١٠٠٠ محادثة شهرياً",
-      "٥٠ منتج",
+      "1000 محادثة شهرياً",
+      "50 منتج",
       "رابط شات مخصص",
-      "ردود بـ ٤ لغات",
+      "ردود بـ 4 لغات",
       "QR Code قابل للتحميل",
       "تحليلات أساسية",
       "دعم واتساب",
@@ -58,7 +58,7 @@ const plans = [
       "تحليلات متقدمة + تنبؤية",
       "إزالة كاملة لشعار دكاني",
       "API مخصص",
-      "دعم أولوية ٢٤/٧",
+      "دعم أولوية 24/7",
     ],
     unavailable: [],
     cta: "ابدأ الاحترافي",
@@ -125,7 +125,7 @@ export default function Pricing() {
               }`}
             >
               سنوي
-              <span className="bg-green-500/20 text-green-400 text-xs px-1.5 py-0.5 rounded-full">وفّر ٣٣٪</span>
+              <span className="bg-green-500/20 text-green-400 text-xs px-1.5 py-0.5 rounded-full">وفّر 33٪</span>
             </button>
           </div>
         </motion.div>
@@ -219,7 +219,7 @@ export default function Pricing() {
         >
           {[
             { icon: "🔒", text: "لا حاجة لبطاقة" },
-            { icon: "↩️", text: "استرجاع خلال ٧ أيام" },
+            { icon: "↩️", text: "استرجاع خلال 7 أيام" },
             { icon: "🚀", text: "إعداد فوري" },
             { icon: "💬", text: "دعم بالعربية" },
           ].map((g, i) => (

@@ -22,12 +22,12 @@ const typeConfig: Record<EntryType, { label: string; icon: string; color: string
 };
 
 const defaultEntries: Entry[] = [
-  { id: 1, type: "qa", question: "شحال تمن الجاكيت؟", answer: "الجاكيت بـ٣٩٠ درهم 🔥 وعندنا توصيل مجاني للطلبات فوق ٢٠٠ درهم!", active: true },
+  { id: 1, type: "qa", question: "شحال تمن الجاكيت؟", answer: "الجاكيت بـ390 درهم 🔥 وعندنا توصيل مجاني للطلبات فوق 200 درهم!", active: true },
   { id: 2, type: "qa", question: "واش كاينين المقاسات؟", answer: "نعم! عندنا من S حتى XXL. إذا ما عرفتيش مقاسك، أخبريني قياساتك وغادي ننصحك 😊", active: true },
-  { id: 3, type: "policy", question: "سياسة الإرجاع", answer: "كاين ١٤ يوم ديال ضمان الإرجاع. المنتج يكون ماشي مستعمل مع عبوته الأصلية. التوصيل ديال الإرجاع مجاني ✅", active: true },
-  { id: 4, type: "policy", question: "مواعيد التوصيل", answer: "كازا: ٢٤ ساعة • باقي المدن: ٢-٣ أيام • الدواوير: ٤-٥ أيام. نتابعك بـ SMS 📦", active: true },
+  { id: 3, type: "policy", question: "سياسة الإرجاع", answer: "كاين 14 يوم ديال ضمان الإرجاع. المنتج يكون ماشي مستعمل مع عبوته الأصلية. التوصيل ديال الإرجاع مجاني ✅", active: true },
+  { id: 4, type: "policy", question: "مواعيد التوصيل", answer: "كازا: 24 ساعة • باقي المدن: 2-3 أيام • الدواوير: 4-5 أيام. نتابعك بـ SMS 📦", active: true },
   { id: 5, type: "tip", question: "كيفاش نغلق صفقة مع زبون متردد", answer: "قول ليه: 'عندي واحد كاتشري هاد المنتج دابا، باش ما تضيعش الفرصة اشترتيه؟' — الندرة تحرك الزبون 🎯", active: true },
-  { id: 6, type: "objection", question: "الثمن غالي", answer: "فهمت! باش نقارن: هاد الجودة عادةً بـ٥٠٠-٦٠٠ درهم في الأسواق. معانا الثمن معقول مع ضمان الجودة والتوصيل المجاني 💯", active: true },
+  { id: 6, type: "objection", question: "الثمن غالي", answer: "فهمت! باش نقارن: هاد الجودة عادةً بـ500-600 درهم في الأسواق. معانا الثمن معقول مع ضمان الجودة والتوصيل المجاني 💯", active: true },
   { id: 7, type: "objection", question: "نفكر فيه وندير معاك", answer: "ماشي مشكل! جوابك معايا. باش أقدر نحجز ليك واحد؟ عندي كمية محدودة 😊", active: true },
 ];
 
@@ -79,8 +79,8 @@ export default function KnowledgePage() {
           {[
             { label: "إجمالي المعلومات", value: entries.length, icon: "📚" },
             { label: "نشطة", value: activeCount, icon: "✅" },
-            { label: "معدل الدقة", value: "٩٧٪", icon: "🎯" },
-            { label: "أسئلة غير مُجابة", value: "٣", icon: "❓" },
+            { label: "معدل الدقة", value: "97٪", icon: "🎯" },
+            { label: "أسئلة غير مُجابة", value: "3", icon: "❓" },
           ].map((s, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 }}
               className="glass rounded-2xl border border-border p-4">
@@ -190,7 +190,7 @@ export default function KnowledgePage() {
           <div className="flex items-center gap-2 mb-4">
             <span className="text-xl">❓</span>
             <h3 className="text-foreground font-black">أسئلة لم يجب عليها الذكاء الاصطناعي</h3>
-            <span className="text-xs text-red-400 bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded-full mr-auto">٣ أسئلة</span>
+            <span className="text-xs text-red-400 bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded-full mr-auto">3 أسئلة</span>
           </div>
           <div className="space-y-2">
             {["واش كاين دليفري لإسبانيا؟", "كيفاش يمكنني أدفع بـPayPal؟", "واش كاين خصومات للطلبيات الكبيرة؟"].map((q, i) => (

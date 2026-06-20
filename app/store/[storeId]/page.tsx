@@ -10,9 +10,9 @@ const store = {
   avatar: "م",
   rating: 4.9,
   reviews: 127,
-  responseTime: "أقل من ٣ دقائق",
+  responseTime: "أقل من 3 دقائق",
   location: "الدار البيضاء، المغرب",
-  hours: "الإثنين-السبت: ٩ص–٩م",
+  hours: "الإثنين-السبت: 9ص–9م",
   phone: "+212 661 234 567",
   instagram: "@atlas.store",
   products: [

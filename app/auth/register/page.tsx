@@ -87,7 +87,7 @@ export default function RegisterPage() {
         {/* Trust signals */}
         <div className="mt-6 flex items-center justify-center gap-4 text-xs text-muted">
           <span>✓ بدون بطاقة</span>
-          <span>✓ ١٤ يوم مجاناً</span>
+          <span>✓ 14 يوم مجاناً</span>
           <span>✓ إلغاء في أي وقت</span>
         </div>
 

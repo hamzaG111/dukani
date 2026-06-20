@@ -9,16 +9,16 @@ const REFERRAL_CODE = "ATLAS2026";
 const REFERRAL_LINK = `https://dukani.ma/join?ref=${REFERRAL_CODE}`;
 
 const tiers = [
-  { name: "برونز", icon: "🥉", refs: 0, reward: "١٠ درهم لكل إحالة", color: "text-orange-400 border-orange-400/30 bg-orange-500/10", current: true },
-  { name: "فضي", icon: "🥈", refs: 5, reward: "٢٠ درهم + شهر مجاني", color: "text-gray-300 border-gray-400/30 bg-gray-500/10", current: false },
-  { name: "ذهبي", icon: "🥇", refs: 15, reward: "٣٠ درهم + شهران مجانيان", color: "text-gold border-gold/30 bg-gold/10", current: false },
-  { name: "بلاتيني", icon: "💎", refs: 30, reward: "٥٠ درهم + حساب مجاني دائم", color: "text-cyan-400 border-cyan-400/30 bg-cyan-500/10", current: false },
+  { name: "برونز", icon: "🥉", refs: 0, reward: "10 درهم لكل إحالة", color: "text-orange-400 border-orange-400/30 bg-orange-500/10", current: true },
+  { name: "فضي", icon: "🥈", refs: 5, reward: "20 درهم + شهر مجاني", color: "text-gray-300 border-gray-400/30 bg-gray-500/10", current: false },
+  { name: "ذهبي", icon: "🥇", refs: 15, reward: "30 درهم + شهران مجانيان", color: "text-gold border-gold/30 bg-gold/10", current: false },
+  { name: "بلاتيني", icon: "💎", refs: 30, reward: "50 درهم + حساب مجاني دائم", color: "text-cyan-400 border-cyan-400/30 bg-cyan-500/10", current: false },
 ];
 
 const referralHistory = [
-  { name: "محمد الكنزاوي", date: "١٥ يونيو ٢٠٢٦", status: "اشترك ✅", reward: "+١٠ درهم" },
-  { name: "فاطمة بنعلي", date: "١٢ يونيو ٢٠٢٦", status: "ينتظر ⏳", reward: "—" },
-  { name: "يوسف الإدريسي", date: "٨ يونيو ٢٠٢٦", status: "اشترك ✅", reward: "+١٠ درهم" },
+  { name: "محمد الكنزاوي", date: "15 يونيو 2026", status: "اشترك ✅", reward: "+10 درهم" },
+  { name: "فاطمة بنعلي", date: "12 يونيو 2026", status: "ينتظر ⏳", reward: "—" },
+  { name: "يوسف الإدريسي", date: "8 يونيو 2026", status: "اشترك ✅", reward: "+10 درهم" },
 ];
 
 export default function ReferralPage() {
@@ -53,9 +53,9 @@ export default function ReferralPage() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 mb-6">
             {[
-              { label: "إجمالي الإحالات", value: "٣", icon: "👥" },
-              { label: "المشتركون", value: "٢", icon: "✅" },
-              { label: "رصيدك", value: "٢٠ د.م", icon: "💰" },
+              { label: "إجمالي الإحالات", value: "3", icon: "👥" },
+              { label: "المشتركون", value: "2", icon: "✅" },
+              { label: "رصيدك", value: "20 د.م", icon: "💰" },
             ].map((s, i) => (
               <div key={i} className="bg-black/20 rounded-2xl p-3">
                 <div className="text-2xl mb-1">{s.icon}</div>
@@ -122,9 +122,9 @@ export default function ReferralPage() {
               <h3 className="text-foreground font-black mb-4">كيف يعمل؟</h3>
               <div className="space-y-4">
                 {[
-                  { step: "١", text: "شارك رابطك مع أي تاجر تعرفه" },
-                  { step: "٢", text: "يسجّل بواسطة رابطك ويجرّب دُكّاني مجاناً" },
-                  { step: "٣", text: "عند اشتراكه في أي خطة مدفوعة، تحصل على مكافأتك فوراً" },
+                  { step: "1", text: "شارك رابطك مع أي تاجر تعرفه" },
+                  { step: "2", text: "يسجّل بواسطة رابطك ويجرّب دُكّاني مجاناً" },
+                  { step: "3", text: "عند اشتراكه في أي خطة مدفوعة، تحصل على مكافأتك فوراً" },
                 ].map((s, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-gold flex items-center justify-center text-background font-black text-sm flex-shrink-0">
@@ -173,7 +173,7 @@ export default function ReferralPage() {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="glass rounded-3xl border border-border overflow-hidden">
             <div className="p-4 border-b border-border flex items-center justify-between">
               <h3 className="text-foreground font-black">سجل إحالاتك</h3>
-              <span className="text-muted text-xs">٣ إحالات</span>
+              <span className="text-muted text-xs">3 إحالات</span>
             </div>
             {referralHistory.map((r, i) => (
               <div key={i} className="flex items-center gap-3 p-4 border-b border-border last:border-0 hover:bg-surface-2 transition-colors">
@@ -193,7 +193,7 @@ export default function ReferralPage() {
             <div className="p-4 bg-surface-2">
               <div className="flex justify-between text-sm">
                 <span className="text-muted">إجمالي المكافآت</span>
-                <span className="text-gold font-black">٢٠ د.م</span>
+                <span className="text-gold font-black">20 د.م</span>
               </div>
             </div>
           </motion.div>

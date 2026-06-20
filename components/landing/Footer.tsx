@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
 const links: Record<string, { label: string; href: string }[]> = {
   المنتج: [
@@ -128,23 +129,12 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted text-sm">
-            © ٢٠٢٦ دُكّاني. جميع الحقوق محفوظة.
+            © 2026 دُكّاني. جميع الحقوق محفوظة.
           </p>
 
-          {/* Language switcher */}
+          {/* Language switcher — functional */}
           <div className="flex items-center gap-2">
-            {["العربية", "Français", "English"].map((lang, i) => (
-              <button
-                key={lang}
-                className={`text-xs px-3 py-1 rounded-full transition-colors ${
-                  i === 0
-                    ? "bg-gold/15 text-gold border border-gold/30"
-                    : "text-muted hover:text-foreground"
-                }`}
-              >
-                {lang}
-              </button>
-            ))}
+            <LanguageSwitcher variant="footer" />
           </div>
 
           {/* Socials */}
