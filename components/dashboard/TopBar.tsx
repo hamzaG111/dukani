@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useGamification } from "@/contexts/GamificationContext";
 
 interface TopBarProps {
   title: string;
@@ -9,6 +11,10 @@ interface TopBarProps {
 
 export default function TopBar({ title, subtitle }: TopBarProps) {
   const [notifOpen, setNotifOpen] = useState(false);
+  const [avatarOpen, setAvatarOpen] = useState(false);
+  const { user, logout } = useAuth();
+  const { xp, levelInfo, streak } = useGamification();
+  const initial = (user?.storeName || "م")[0];
 
   return (
     <header className="h-16 bg-surface border-b border-border flex items-center justify-between px-6 sticky top-0 z-40">
@@ -47,9 +53,47 @@ export default function TopBar({ title, subtitle }: TopBarProps) {
           )}
         </div>
 
-        {/* Avatar */}
-        <div className="w-9 h-9 rounded-xl bg-gold-gradient flex items-center justify-center text-background font-black text-sm cursor-pointer hover:shadow-gold transition-shadow">
-          م
+        {/* XP + streak pill */}
+        <div className="hidden sm:flex items-center gap-2 bg-surface-2 rounded-xl px-3 py-1.5 border border-border">
+          <span className="text-orange-400 text-xs font-black">🔥 {streak}</span>
+          <span className="w-px h-3 bg-border" />
+          <span className="text-gold text-xs font-bold">{xp} XP</span>
+        </div>
+
+        {/* Avatar + dropdown */}
+        <div className="relative">
+          <button
+            onClick={() => setAvatarOpen(!avatarOpen)}
+            className="w-9 h-9 rounded-xl bg-gold-gradient flex items-center justify-center text-background font-black text-sm cursor-pointer hover:shadow-gold transition-shadow"
+          >
+            {initial}
+          </button>
+
+          {avatarOpen && (
+            <div className="absolute left-0 top-11 w-56 glass rounded-2xl border border-border shadow-card p-3 space-y-1">
+              <div className="px-2 py-1.5 border-b border-border mb-2">
+                <p className="text-foreground text-sm font-bold">{user?.storeName || "متجرك"}</p>
+                <p className="text-muted text-xs">{user?.email}</p>
+                <p className="text-xs mt-0.5" style={{ color: levelInfo.color }}>{levelInfo.name}</p>
+              </div>
+              {[
+                { href: "/dashboard/settings", label: "الإعدادات", icon: "⚙️" },
+                { href: "/dashboard/subscription", label: "الاشتراك", icon: "⭐" },
+                { href: "/dashboard/achievements", label: "الإنجازات", icon: "🏆" },
+              ].map(item => (
+                <a key={item.href} href={item.href}
+                  className="flex items-center gap-2 px-2 py-2 rounded-xl text-muted hover:text-foreground hover:bg-surface-2 text-sm transition-colors">
+                  <span>{item.icon}</span>
+                  <span>{item.label}</span>
+                </a>
+              ))}
+              <button onClick={logout}
+                className="w-full flex items-center gap-2 px-2 py-2 rounded-xl text-red-400 hover:bg-red-500/5 text-sm transition-colors">
+                <span>🚪</span>
+                <span>تسجيل الخروج</span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </header>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { GamificationProvider } from "@/contexts/GamificationContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 import AchievementToast from "@/components/ui/AchievementToast";
 
 export const metadata: Metadata = {
@@ -53,12 +54,14 @@ export default function RootLayout({
         />
       </head>
       <body className="font-cairo antialiased">
-        <LanguageProvider>
-          <GamificationProvider>
-            {children}
-            <AchievementToast />
-          </GamificationProvider>
-        </LanguageProvider>
+        <AuthProvider>
+          <LanguageProvider>
+            <GamificationProvider>
+              {children}
+              <AchievementToast />
+            </GamificationProvider>
+          </LanguageProvider>
+        </AuthProvider>
       </body>
     </html>
   );
